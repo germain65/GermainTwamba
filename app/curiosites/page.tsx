@@ -35,7 +35,7 @@ const notes = [
     title: 'Les matrices de Gram',
     body: 'Une matrice de Gram rassemble les produits scalaires d’une famille de vecteurs et encode leurs longueurs, leurs angles et leur dépendance.',
     detail: 'Définition, preuve de positivité, rang, déterminant et volume, moindres carrés, exemples détaillés et exercices.',
-    source: 'Dossier PDF de 7 pages composé en LaTeX, avec figure TikZ et démonstrations.',
+    source: 'Dossier PDF de 8 pages composé en LaTeX, avec figures et démonstrations.',
     pdf: '03-matrices-de-gram.pdf',
   },
   {

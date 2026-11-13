@@ -16,30 +16,11 @@ Alors $P,Q,R$ sont alignés. La droite qui les contient s'appelle la \emph{droit
 
 Les lettres indiquent un appariement précis des six côtés de l'hexagone croisé. On peut lire le parcours des sommets comme $A,B',C,A',B,C'$. Les trois couples de côtés opposés sont alors ceux qui définissent $P,Q,R$. La formulation est valable pour une ellipse, une parabole ou une hyperbole. Dans le plan affine, deux côtés parallèles n'ont pas d'intersection visible ; dans le plan projectif, ils se rencontrent en un point à l'infini et l'énoncé reste uniforme.
 
-\begin{center}
-\begin{tikzpicture}[scale=0.92, every node/.style={font=\small}]
-  \draw[thick,Forest] (0,0) ellipse (3 and 1.75);
-  \coordinate (A)  at ({3*cos(18)},{1.75*sin(18)});
-  \coordinate (Bp) at ({3*cos(76)},{1.75*sin(76)});
-  \coordinate (C)  at ({3*cos(139)},{1.75*sin(139)});
-  \coordinate (Ap) at ({3*cos(198)},{1.75*sin(198)});
-  \coordinate (B)  at ({3*cos(254)},{1.75*sin(254)});
-  \coordinate (Cp) at ({3*cos(318)},{1.75*sin(318)});
-  \draw[gray!75] (A)--(Bp)--(C)--(Ap)--(B)--(Cp)--cycle;
-  % Schema explicatif : la droite est reportee a part pour rester lisible.
-  \coordinate (P) at (-3.45,1.25);
-  \coordinate (Q) at (-3.45,0);
-  \coordinate (R) at (-3.45,-1.25);
-  \draw[Forest,very thick] ($(P)+(0,-0.4)$)--($(R)+(0,0.4)$);
-  \foreach \X/\lab/\pos in {A/A/above right,Bp/{B'}/above right,C/C/above left,Ap/{A'}/below left,B/B/below left,Cp/{C'}/below right}
-  \fill[Ink] (\X) circle (2pt) node[\pos] {$\lab$};
-  \foreach \X/\lab in {P/P,Q/Q,R/R}
-    \fill[BrickRed] (\X) circle (2.5pt) node[above right] {$\lab$};
-  \node[Forest,fill=white,inner sep=1pt] at (2.0,-0.15) {droite de Pascal};
-\end{tikzpicture}
-\end{center}
-\smallskip
-\textit{Schéma de principe, sans échelle : dans la configuration réelle, $P,Q,R$ sont les intersections des côtés opposés et appartiennent à une même droite.}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.66\linewidth]{images/pascal-theorem-white.png}
+\caption{Une configuration du théorème de Pascal : les intersections des paires de côtés opposés sont alignées. Illustration de .jhc., diffusée dans le domaine public sur Wikimedia Commons ; fond transparent aplati sur blanc pour l'impression. Voir la \href{https://commons.wikimedia.org/wiki/File:Pascal\%27s_theorem.png}{notice de l'image}.}
+\end{figure}
 
 \newpage
 \section{Le langage projectif nécessaire}
