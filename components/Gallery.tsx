@@ -10,7 +10,6 @@ import { asset } from '@/data/site';
 interface Photo {
   src: string;
   alt: string;
-  label?: string;
 }
 
 export default function Gallery({ photos }: { photos: Photo[] }) {
@@ -45,11 +44,6 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
               loading="lazy"
               className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            {p.label && (
-              <span className="absolute bottom-0 left-0 right-0 bg-ink/60 px-2 py-1 text-xs text-paper opacity-0 transition-opacity group-hover:opacity-100">
-                {p.label}
-              </span>
-            )}
           </button>
         ))}
       </div>
@@ -80,9 +74,6 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
               alt={photos[open].alt}
               className="max-h-[85vh] max-w-[85vw] object-contain shadow-2xl"
             />
-            {photos[open].label && (
-              <p className="mt-2 text-center text-sm text-paper/80">{photos[open].label}</p>
-            )}
           </div>
 
           {/* Fermer */}

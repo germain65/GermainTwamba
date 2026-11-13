@@ -53,7 +53,7 @@ export default function Home() {
           <div className="relative overflow-hidden border-2 border-ink bg-tint shadow-xl">
             <img
               src={asset('/photos/germain-accueil.jpg')}
-              alt="Germain-Junior TWAMBA devant un panorama urbain et des ruines antiques"
+              alt="Germain-Junior TWAMBA devant un panorama de vallée"
               className="aspect-[4/3] w-full object-cover object-center"
             />
             <div className="border-t border-ink bg-paper p-3 text-center">

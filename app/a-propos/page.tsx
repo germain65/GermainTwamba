@@ -32,17 +32,18 @@ const interests = [
 
 // Galerie : portraits et lieux
 const gallery = [
-  { src: '/photos/germain-portrait.jpg',        alt: 'Germain-Junior TWAMBA — portrait officiel', label: 'Germain-Junior TWAMBA' },
-  { src: '/photos/germain-parc.jpg',            alt: 'Germain-Junior TWAMBA — parc en Belgique', label: 'Belgique, 2026' },
-  { src: '/photos/germain-cote.jpg',            alt: 'Germain-Junior TWAMBA — côte irlandaise',  label: 'Irlande, 2026' },
-  { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'Bibliothèque de l’UCLouvain',             label: 'UCLouvain — Louvain-la-Neuve' },
-  { src: '/photos/place-belgique.jpg',          alt: 'Place en Belgique',                         label: 'Belgique' },
-  { src: '/photos/panorama-ville.jpg',          alt: 'Panorama sur une ville',                    label: 'Vue panoramique' },
-  { src: '/photos/vue-hauteur.jpg',             alt: 'Vue sur une ville depuis une hauteur',      label: 'Vue en hauteur' },
-  { src: '/photos/escaliers-pierre.jpg',        alt: 'Escaliers en pierre',                       label: 'Architecture' },
-  { src: '/photos/sentier-foret.jpg',           alt: 'Sentier en forêt',                          label: 'Forêt' },
-  { src: '/photos/parc-arbres.jpg',             alt: 'Parc arboré',                              label: 'Parc' },
-  { src: '/photos/voyage-train.jpg',            alt: 'Paysage depuis un train',                   label: 'En route' },
+  { src: '/photos/germain-acropole.jpg', alt: 'Germain-Junior TWAMBA devant l’Acropole à Athènes' },
+  { src: '/photos/germain-portrait.jpg',        alt: 'Germain-Junior TWAMBA — portrait officiel' },
+  { src: '/photos/germain-parc.jpg',            alt: 'Germain-Junior TWAMBA — parc en Belgique' },
+  { src: '/photos/germain-cote.jpg',            alt: 'Germain-Junior TWAMBA — côte irlandaise' },
+  { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'Bibliothèque de l’UCLouvain' },
+  { src: '/photos/place-belgique.jpg',          alt: 'Place en Belgique' },
+  { src: '/photos/panorama-ville.jpg',          alt: 'Panorama sur une ville' },
+  { src: '/photos/vue-hauteur.jpg',             alt: 'Vue sur une ville depuis une hauteur' },
+  { src: '/photos/escaliers-pierre.jpg',        alt: 'Escaliers en pierre' },
+  { src: '/photos/sentier-foret.jpg',           alt: 'Sentier en forêt' },
+  { src: '/photos/parc-arbres.jpg',             alt: 'Parc arboré' },
+  { src: '/photos/voyage-train.jpg',            alt: 'Paysage depuis un train' },
 ];
 
 export default function About() {
