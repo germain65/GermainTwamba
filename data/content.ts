@@ -85,7 +85,7 @@ export const projects: Project[] = [
     title: 'Bibliothèque numérique et site web personnel',
     description:
       'Plateforme web moderne construite en Next.js (App Router), TypeScript et Tailwind CSS. Export statique ultra-performant, recherche instantanée d\'ouvrages, visionneuse d\'aperçu de PDF sans rechargement, fiches bibliographiques détaillées et accessibilité soignée.',
-    tech: ['Next.js 15', 'React', 'TypeScript', 'Tailwind CSS', 'Schema.org SEO'],
+    tech: ['Next.js 15.1.6', 'React', 'TypeScript', 'Tailwind CSS', 'Schema.org SEO'],
     github: 'https://github.com/germain65',
     link: 'https://germain65.github.io',
   },

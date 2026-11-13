@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
       title: b.title,
       description: b.description,
       type: 'book',
-      images: [b.cover ?? '/logo.svg'],
+      images: [asset(b.cover ?? '/logo.svg')],
     },
   };
 }

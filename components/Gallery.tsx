@@ -4,7 +4,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { asset } from '@/data/site';
 
 interface Photo {
@@ -15,9 +15,18 @@ interface Photo {
 
 export default function Gallery({ photos }: { photos: Photo[] }) {
   const [open, setOpen] = useState<number | null>(null);
+  // Référence sur le conteneur de la lightbox pour y déplacer le focus à l'ouverture
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   const go = (d: number) =>
     setOpen((v) => v === null ? null : (v + d + photos.length) % photos.length);
+
+  // Déplace le focus sur la lightbox dès qu'elle s'ouvre
+  useEffect(() => {
+    if (open !== null) {
+      lightboxRef.current?.focus();
+    }
+  }, [open]);
 
   return (
     <>
@@ -48,6 +57,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
       {/* Lightbox */}
       {open !== null && (
         <div
+          ref={lightboxRef}
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90"
           role="dialog"
           aria-modal="true"

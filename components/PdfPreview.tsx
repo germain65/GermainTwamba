@@ -25,6 +25,7 @@ export default function PdfPreview({ pages, title, pdfUrl }: PdfPreviewProps) {
   return (
     <section
       aria-label={`Aperçu de ${title}`}
+      tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'ArrowRight') goTo(current + 1);
         if (e.key === 'ArrowLeft') goTo(current - 1);

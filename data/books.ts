@@ -305,7 +305,7 @@ const books: Book[] = [
       'Deuxième tome de la collection : nombres complexes, fonctions logarithmiques et exponentielles, questions de géométrie, avec corrigés complets et formulaire de mathématiques.',
     summary: [
       'Ce volume marque l\'entrée dans les mathématiques fondamentales : algèbre, analyse réelle et géométrie. Il accompagne le passage du calcul technique du secondaire à la pensée abstraite de l\'université, en tissant des liens permanents entre représentations géométriques et rigueur analytique.',
-      'La première partie couvre les nombres complexes (formes algébrique, trigonométrique et exponentielle, formule de Moivre, racines n-ièmes) puis les fonctions logarithmiques et exponentielles, avec un riche contexte historique et un rappel sur les généralités des fonctions numériques. La deuxième partie est consacrée aux questions de géométrie synthtique.',
+      'La première partie couvre les nombres complexes (formes algébrique, trigonométrique et exponentielle, formule de Moivre, racines n-ièmes) puis les fonctions logarithmiques et exponentielles, avec un riche contexte historique et un rappel sur les généralités des fonctions numériques. La deuxième partie est consacrée aux questions de géométrie synthétique.',
       'Une partie entière de corrigés détaillés, un formulaire de mathématiques, une bibliographie et un index alphabétique complètent l\'ouvrage. La collection est née au sein du Club des Divergents, initiative d\'émulation scientifique fondée à Goma pour mettre à la disposition de la jeunesse des outils pédagogiques au plus haut standard académique.',
     ],
     cover: '/books/tome-2-cover.jpg',

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: site.tagline,
     type: 'website',
     locale: 'fr_FR',
-    images: [asset('/logo.svg')],
+    images: ['/logo.svg'],
   },
 };
 
