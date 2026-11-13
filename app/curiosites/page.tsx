@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { asset, siteUpdatedAt } from '@/data/site';
+import { asset } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Curiosités',
@@ -11,7 +11,7 @@ const notes = [
   {
     number: '01',
     theme: 'Géométrie projective',
-    date: siteUpdatedAt,
+    date: '13 novembre 2026',
     title: 'Le théorème de Pascal',
     body: 'Six points sur une conique déterminent, par les intersections des côtés opposés de l’hexagone, trois points alignés.',
     detail: 'Énoncé projectif, preuve analytique détaillée sur une conique paramétrée, exemple calculé et pistes pour aller plus loin.',
@@ -21,7 +21,7 @@ const notes = [
   {
     number: '02',
     theme: 'Géométrie japonaise',
-    date: siteUpdatedAt,
+    date: '13 novembre 2026',
     title: 'Les problèmes japonais de géométrie',
     body: 'Les sangaku sont des tablettes votives sur lesquelles des fidèles gravaient des problèmes et des figures mathématiques.',
     detail: 'Repères historiques et étude complète d’une famille de cercles tangents : construction, preuve par inversion des rayons, exemple numérique et exercices.',
@@ -31,7 +31,7 @@ const notes = [
   {
     number: '03',
     theme: 'Algèbre linéaire et géométrie',
-    date: siteUpdatedAt,
+    date: '13 novembre 2026',
     title: 'Les matrices de Gram',
     body: 'Une matrice de Gram rassemble les produits scalaires d’une famille de vecteurs et encode leurs longueurs, leurs angles et leur dépendance.',
     detail: 'Définition, preuve de positivité, rang, déterminant et volume, moindres carrés, exemples détaillés et exercices.',
@@ -41,7 +41,7 @@ const notes = [
   {
     number: '04',
     theme: 'Modélisation et dynamique',
-    date: siteUpdatedAt,
+    date: '13 novembre 2026',
     title: 'Le modèle de Verhulst',
     body: 'La croissance logistique décrit une population qui croît vite quand elle est rare, puis ralentit à mesure qu’elle approche une capacité limite.',
     detail: 'Équation différentielle, solution, équilibres, point d’inflexion, exemple numérique, estimation des paramètres et limites du modèle.',

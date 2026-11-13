@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
       title: b.title,
       description: b.description,
       type: 'book',
-      images: [asset(b.cover ?? '/logo.svg')],
+      images: [b.cover ?? '/og.jpg'], // chemin simple : metadataBase ajoute déjà le basePath
     },
   };
 }
@@ -108,7 +108,19 @@ export default async function BookPage({ params }: P) {
     inLanguage: b.language,
     datePublished: b.publicationDate,
     license: b.license,
+    isAccessibleForFree: true,
+    ...(b.publisher && { publisher: { '@type': 'Organization', name: b.publisher } }),
+    ...(b.pageCount && { numberOfPages: b.pageCount }),
+    ...(b.cover && { image: `${site.url}${b.cover}` }),
     ...(b.isbn && { isbn: b.isbn }),
+    ...(b.doi && { sameAs: `https://doi.org/${b.doi}` }),
+    ...(b.downloadUrl && {
+      encoding: {
+        '@type': 'MediaObject',
+        contentUrl: `${site.url}${b.downloadUrl}`,
+        encodingFormat: 'application/pdf',
+      },
+    }),
     url: `${site.url}/bibliotheque/${b.slug}/`,
   };
 

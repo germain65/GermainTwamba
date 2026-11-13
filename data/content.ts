@@ -24,11 +24,6 @@ export interface Project {
   sourceLabel?: string;
 }
 
-export interface Milestone {
-  year: string;
-  text: string;
-}
-
 // ─── Publications scientifiques et pédagogiques ──────────────────────────────
 export const publications: Publication[] = [
   {
@@ -110,14 +105,4 @@ export const projects: Project[] = [
     externalHref: 'https://github.com/germain65/Genie_en_herbe_mwanga',
     externalLabel: 'Code source GitHub',
   },
-];
-
-// ─── Jalons du parcours ───────────────────────────────────────────────────────
-export const timeline: Milestone[] = [
-  { year: 'Déc. 2006', text: 'Naissance à Goma, province du Nord-Kivu, République Démocratique du Congo.' },
-  { year: '2020', text: 'Découverte passionnée des mathématiques à l\'âge de 13 ans lors du confinement.' },
-  { year: '2020–2026', text: 'Humanités scientifiques à l\'Institut Mwanga de Goma et lauréat d\'études secondaires.' },
-  { year: '2026', text: 'Création du Club des Divergents pour l\'édition et la diffusion libre d\'ouvrages de mathématiques.' },
-  { year: 'Oct. 2026', text: 'Parution du Tome I (Trigonométrie plane, 455 pages) et du Tome II (Algèbre, analyse et géométrie, 465 pages).' },
-  { year: '2026–présent', text: 'Études d\'ingénieur civil à l\'École polytechnique de Louvain (UCLouvain, Belgique).' },
 ];

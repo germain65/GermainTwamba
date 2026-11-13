@@ -16,9 +16,39 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
   const [open, setOpen] = useState<number | null>(null);
   // Référence sur le conteneur de la lightbox pour y déplacer le focus à l'ouverture
   const lightboxRef = useRef<HTMLDivElement>(null);
+  // Élément qui avait le focus avant l'ouverture, pour le lui rendre à la fermeture
+  const lastFocused = useRef<HTMLElement | null>(null);
 
   const go = (d: number) =>
     setOpen((v) => v === null ? null : (v + d + photos.length) % photos.length);
+
+  const openAt = (i: number) => {
+    lastFocused.current = document.activeElement as HTMLElement | null;
+    setOpen(i);
+  };
+
+  const close = () => {
+    setOpen(null);
+    // Rend le focus au bouton de la vignette qui a ouvert la lightbox
+    requestAnimationFrame(() => lastFocused.current?.focus());
+  };
+
+  // Piège de focus : Tab / Maj+Tab restent à l'intérieur de la boîte de dialogue
+  const trapTab = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== 'Tab') return;
+    const items = lightboxRef.current?.querySelectorAll<HTMLElement>('button');
+    if (!items || items.length === 0) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || active === lightboxRef.current)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
 
   // Déplace le focus sur la lightbox dès qu'elle s'ouvre
   useEffect(() => {
@@ -34,7 +64,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
         {photos.map((p, i) => (
           <button
             key={p.src}
-            onClick={() => setOpen(i)}
+            onClick={() => openAt(i)}
             className="group relative overflow-hidden border border-rule focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label={`Ouvrir : ${p.alt}`}
           >
@@ -56,9 +86,10 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
           role="dialog"
           aria-modal="true"
           aria-label={photos[open].alt}
-          onClick={() => setOpen(null)}
+          onClick={close}
           onKeyDown={(e) => {
-            if (e.key === 'Escape') setOpen(null);
+            trapTab(e);
+            if (e.key === 'Escape') close();
             if (e.key === 'ArrowRight') go(1);
             if (e.key === 'ArrowLeft') go(-1);
           }}
@@ -78,7 +109,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
 
           {/* Fermer */}
           <button
-            onClick={() => setOpen(null)}
+            onClick={close}
             className="absolute right-4 top-4 min-h-11 min-w-11 text-2xl text-paper hover:text-accent"
             aria-label="Fermer"
           >

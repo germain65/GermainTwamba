@@ -61,7 +61,7 @@ site/
 │
 ├── data/                   ← 📌 C'EST ICI QUE VOUS MODIFIEZ LE CONTENU
 │   ├── books.ts            ← Catalogue des livres (ajouter un tome ici)
-│   ├── content.ts          ← Publications, projets, jalons du parcours
+│   ├── content.ts          ← Publications et projets
 │   └── site.ts             ← Infos générales (nom, liens réseaux sociaux…)
 │
 ├── public/                 ← Fichiers accessibles publiquement
@@ -252,9 +252,9 @@ Ouvrez [`data/content.ts`](data/content.ts) pour modifier :
 
 - **`publications`** : vos articles, manuels, fascicules publiés (affichés sur `/publications/`)
 - **`projects`** : vos réalisations et initiatives (affichés sur `/projets/`)
-- **`siteUpdatedAt`** : date affichée dans le pied de page, la note de confidentialité et les curiosités ; mettez-la à jour avec le contenu.
-- **`app/curiosites/page.tsx`** : ajoutez une date et une source ou une démonstration à chaque curiosité.
-- **`milestones`** : les grandes étapes de votre parcours (affichés sur `/a-propos/`)
+- **`siteUpdatedAt`** (dans `data/site.ts`, avec `siteUpdatedAtISO` pour le sitemap) : date affichée dans le pied de page et la note de confidentialité ; mettez-la à jour avec le contenu.
+- **`app/curiosites/page.tsx`** : ajoutez à chaque curiosité sa propre date de publication (écrite en dur, elle ne change pas avec `siteUpdatedAt`) et une source ou une démonstration.
+- **`app/a-propos/page.tsx`** : le tableau `timeline` contient les grandes étapes de votre parcours.
 
 Chaque tableau est documenté directement dans le fichier avec des commentaires en français.
 

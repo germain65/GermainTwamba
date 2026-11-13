@@ -4,10 +4,11 @@
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/GermainTwamba';
 export const siteUpdatedAt = '13 novembre 2026';
+export const siteUpdatedAtISO = '2026-11-13'; // même date, format AAAA-MM-JJ (sitemap)
 
 export const site = {
   name: 'Germain-Junior TWAMBA',
-  tagline: 'Bibliothèque numérique & recueils d’ouvrages libres',
+  tagline: 'Bibliothèque numérique & recueil d’ouvrages en accès libre',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? `https://germain65.github.io${BASE_PATH}`,
   basePath: BASE_PATH,
   email: 'amandotwamba@gmail.com',

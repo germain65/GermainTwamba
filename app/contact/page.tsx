@@ -39,7 +39,7 @@ export default function ContactPage() {
             {/* Email institutionnel */}
             <div className="border-2 border-ink p-5 bg-paper">
               <span className="text-xs font-mono text-accent uppercase font-bold">
-                Adresse e-mail institutionnelle
+                Adresse e-mail
               </span>
               <p className="mt-1 font-serif text-xl font-medium text-ink">
                 <a
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 </a>
               </p>
               <p className="mt-2 text-xs text-mute">
-                Relevé régulier &middot; Étudiant à l&apos;École polytechnique de Louvain (UCLouvain)
+                Étudiant à l&apos;École polytechnique de Louvain (UCLouvain)
               </p>
             </div>
 

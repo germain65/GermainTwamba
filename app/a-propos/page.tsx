@@ -32,18 +32,18 @@ const interests = [
 
 // Galerie : portraits et lieux
 const gallery = [
-  { src: '/photos/germain-acropole.jpg', alt: 'Germain-Junior TWAMBA devant l’Acropole à Athènes' },
-  { src: '/photos/germain-portrait.jpg',        alt: 'Germain-Junior TWAMBA — portrait officiel' },
-  { src: '/photos/germain-parc.jpg',            alt: 'Germain-Junior TWAMBA — parc en Belgique' },
-  { src: '/photos/germain-cote.jpg',            alt: 'Germain-Junior TWAMBA — côte irlandaise' },
-  { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'Bibliothèque de l’UCLouvain' },
-  { src: '/photos/place-belgique.jpg',          alt: 'Place en Belgique' },
-  { src: '/photos/panorama-ville.jpg',          alt: 'Panorama sur une ville' },
-  { src: '/photos/vue-hauteur.jpg',             alt: 'Vue sur une ville depuis une hauteur' },
-  { src: '/photos/escaliers-pierre.jpg',        alt: 'Escaliers en pierre' },
-  { src: '/photos/sentier-foret.jpg',           alt: 'Sentier en forêt' },
-  { src: '/photos/parc-arbres.jpg',             alt: 'Parc arboré' },
-  { src: '/photos/voyage-train.jpg',            alt: 'Paysage depuis un train' },
+  { src: '/photos/germain-acropole.jpg', alt: 'L’auteur debout sur une esplanade de pierre, avec un site antique sur la colline en arrière-plan' },
+  { src: '/photos/germain-portrait.jpg',        alt: 'Autoportrait de l’auteur dans les gradins d’un stade, sous un ciel dégagé' },
+  { src: '/photos/germain-parc.jpg',            alt: 'L’auteur debout sur une pelouse, devant un grand bâtiment en brique' },
+  { src: '/photos/germain-cote.jpg',            alt: 'L’auteur sur un pont au bord de l’eau, avec une falaise et une église en arrière-plan' },
+  { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'La tour d’une bibliothèque universitaire sous un ciel bleu' },
+  { src: '/photos/place-belgique.jpg',          alt: 'Rue animée bordée d’immeubles en brique' },
+  { src: '/photos/panorama-ville.jpg',          alt: 'Vue sur une ville dans une vallée, depuis un muret de pierre' },
+  { src: '/photos/vue-hauteur.jpg',             alt: 'Vue d’en haut sur une ville traversée par une rivière' },
+  { src: '/photos/escaliers-pierre.jpg',        alt: 'Long escalier de pierre bordé de murs, qui monte vers le haut' },
+  { src: '/photos/sentier-foret.jpg',           alt: 'Chemin couvert de feuilles mortes qui longe un mur de pierre' },
+  { src: '/photos/parc-arbres.jpg',             alt: 'Allée d’un parc entre de grands arbres' },
+  { src: '/photos/voyage-train.jpg',            alt: 'Champs verts vus à travers la vitre d’un train' },
 ];
 
 export default function About() {

@@ -136,7 +136,7 @@ export default function Footer() {
             </ul>
 
             <div className="pt-2 text-xs text-mute leading-relaxed border-t border-rule/60">
-              <span className="font-semibold text-ink">Licence libre :</span> Ouvrages et contenus diffusés sous licence{' '}
+              <span className="font-semibold text-ink">Licence :</span> Ouvrages et contenus diffusés sous licence{' '}
               <a
                 href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"
                 target="_blank"
@@ -144,7 +144,8 @@ export default function Footer() {
                 className="underline hover:text-accent"
               >
                 CC BY-NC-ND 4.0
-              </a>.
+              </a>{' '}
+              &mdash; téléchargement et partage libres, sans modification ni usage commercial.
             </div>
           </div>
 
@@ -153,7 +154,7 @@ export default function Footer() {
         {/* Ligne inférieure de clôture */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-rule pt-6 text-xs text-mute lg:flex-row lg:flex-wrap lg:justify-center xl:justify-between">
           <p>
-            &copy; {new Date().getFullYear()} Germain-Junior TWAMBA. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Germain-Junior TWAMBA. Certains droits réservés.
           </p>
           <p className="text-center sm:text-right">
             Édité par le <strong>Club des Divergents</strong> &mdash; Goma (RDC) &amp; Louvain-la-Neuve (Belgique)

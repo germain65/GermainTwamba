@@ -233,7 +233,7 @@ export default function Home() {
             <span className="font-mono text-2xl font-bold text-accent">02.</span>
             <h3 className="mt-2 font-serif text-xl font-semibold">Téléchargement libre</h3>
             <p className="mt-2 text-sm text-mute leading-relaxed">
-              Aucun abonnement, aucune barrière financière : tous les manuels sont diffusés au format PDF sous licence libre Creative Commons.
+              Aucun abonnement, aucune barrière financière : tous les manuels sont diffusés au format PDF sous licence Creative Commons CC BY-NC-ND 4.0 (partage libre, sans modification ni usage commercial).
             </p>
           </div>
           <div className="border border-rule p-5 bg-tint/20">
