@@ -1,7 +1,7 @@
 # Site de Germain-Junior TWAMBA
 
 > Bibliothèque numérique officielle et recueil de tous les ouvrages mathématiques de Germain-Junior TWAMBA.
-> Construit avec **Next.js 14 (App Router)**, **TypeScript** et **Tailwind CSS**.
+> Construit avec **Next.js 15 (App Router)**, **TypeScript** et **Tailwind CSS**.
 > Hébergé sur **GitHub Pages** à l'adresse : https://germain65.github.io/GermainTwamba/
 
 ---
@@ -53,6 +53,8 @@ site/
 │   ├── a-propos/           ← Biographie et photo principale
 │   ├── publications/       ← Liste des publications
 │   ├── projets/            ← Projets et réalisations
+│   ├── curiosites/         ← Notes courtes, datées et sourcées
+│   ├── confidentialite/    ← Informations sur les données et l'hébergement
 │   └── contact/            ← Formulaire de contact
 │
 ├── components/             ← Composants réutilisables (Header, Footer, BookCover…)
@@ -250,6 +252,8 @@ Ouvrez [`data/content.ts`](data/content.ts) pour modifier :
 
 - **`publications`** : vos articles, manuels, fascicules publiés (affichés sur `/publications/`)
 - **`projects`** : vos réalisations et initiatives (affichés sur `/projets/`)
+- **`siteUpdatedAt`** : date affichée dans le pied de page, la note de confidentialité et les curiosités ; mettez-la à jour avec le contenu.
+- **`app/curiosites/page.tsx`** : ajoutez une date et une source ou une démonstration à chaque curiosité.
 - **`milestones`** : les grandes étapes de votre parcours (affichés sur `/a-propos/`)
 
 Chaque tableau est documenté directement dans le fichier avec des commentaires en français.
@@ -290,20 +294,15 @@ gh workflow run deploy.yml --repo germain65/GermainTwamba
 
 ## 8. Formulaire de contact
 
-Le formulaire de contact utilise [Formspree](https://formspree.io) (service gratuit jusqu'à 50 messages/mois).
+Le formulaire n'est pas connecté par défaut. Dans cette version, la page Contact propose un lien `mailto` pour écrire directement. Le site ne transmet ni ne stocke alors le message.
 
-1. Créez un compte sur https://formspree.io
-2. Créez un nouveau formulaire et copiez votre URL (ex. `https://formspree.io/f/xabcdefg`)
-3. Ouvrez `.env.local` et ajoutez :
+Pour activer un prestataire de formulaire, choisissez-le, vérifiez ses règles de confidentialité et ajoutez son URL publique dans une variable de dépôt :
 
 ```env
-NEXT_PUBLIC_FORM_ENDPOINT=https://formspree.io/f/xabcdefg
+NEXT_PUBLIC_FORM_ENDPOINT=https://votre-prestataire.example/votre-formulaire
 ```
 
-4. Pour que cela fonctionne aussi en production (GitHub Pages), ajoutez la variable dans les paramètres du dépôt :
-   - **GitHub → Dépôt GermainTwamba → Settings → Secrets and variables → Actions → Variables → New repository variable**
-   - Nom : `NEXT_PUBLIC_FORM_ENDPOINT`
-   - Valeur : votre URL Formspree
+Dans GitHub, configurez-la dans **Settings → Secrets and variables → Actions → Variables**. Le workflow de publication la transmet au build. Comme `NEXT_PUBLIC_FORM_ENDPOINT` est intégrée aux fichiers du site, cette adresse sera publique. Complétez la note de confidentialité avec le nom du prestataire et ses informations avant d'activer l'envoi.
 
 ---
 

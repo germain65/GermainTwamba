@@ -32,7 +32,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation principale pour écrans moyens et grands (inclut Accueil) */}
-        <nav aria-label="Navigation principale" className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav aria-label="Navigation principale" className="hidden items-center gap-3 text-xs font-medium lg:flex lg:gap-5 lg:text-sm">
           {nav.map((n) => {
             const active = isActive(n.href);
             return (
@@ -54,7 +54,7 @@ export default function Header() {
 
         {/* Bouton pour menu sur mobile */}
         <button
-          className="min-h-11 min-w-11 border border-rule px-3 text-sm font-medium md:hidden hover:bg-tint transition-colors"
+          className="min-h-11 min-w-11 border border-rule px-3 text-sm font-medium lg:hidden hover:bg-tint transition-colors"
           aria-expanded={open}
           aria-controls="menu"
           onClick={() => setOpen(!open)}
@@ -65,7 +65,7 @@ export default function Header() {
 
       {/* Menu déroulant sur mobile */}
       {open && (
-        <nav id="menu" aria-label="Menu mobile" className="border-t border-rule bg-paper md:hidden">
+        <nav id="menu" aria-label="Menu mobile" className="border-t border-rule bg-paper lg:hidden">
           {nav.map((n) => (
             <Link
               key={n.href}

@@ -23,7 +23,7 @@ export default function ProjectsPage() {
           Projets scientifiques et numériques
         </h1>
         <p className="mt-4 text-base text-mute leading-relaxed">
-          À l&apos;intersection de la rigueur mathématique, de l&apos;art typographique et du développement logiciel, ces projets concrétisent une même ambition : rendre accessibles et compréhensibles les concepts les plus exigeants.
+          Des manuels de mathématiques aux outils éducatifs et numériques, ces projets relient pédagogie, édition et développement. Les liens ouvrent les dépôts précis ou les notices bibliographiques associées.
         </p>
       </header>
 
@@ -57,22 +57,23 @@ export default function ProjectsPage() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-4 pt-4 border-t border-rule text-sm">
-              {p.link && (
-                <Link
-                  href={p.link}
-                  className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline underline-offset-4"
-                >
-                  Accéder au projet &rarr;
+              {p.link && (p.link.startsWith('http') ? (
+                <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline underline-offset-4">
+                  {p.sourceLabel ?? 'Accéder au projet'} &nearr;
+                </a>
+              ) : (
+                <Link href={p.link} className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline underline-offset-4">
+                  {p.sourceLabel ?? 'Accéder au projet'} &rarr;
                 </Link>
-              )}
-              {p.github && (
+              ))}
+              {p.externalHref && (
                 <a
-                  href={p.github}
+                  href={p.externalHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-medium underline hover:text-accent underline-offset-4"
                 >
-                  Code source sur GitHub &nearr;
+                  {p.externalLabel ?? 'Consulter la source'} &nearr;
                 </a>
               )}
             </div>

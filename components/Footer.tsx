@@ -5,7 +5,7 @@
 'use client';
 
 import Link from 'next/link';
-import { site, nav } from '@/data/site';
+import { site, nav, siteUpdatedAt } from '@/data/site';
 import { allBooks } from '@/data/books';
 import { Mark } from './Logo';
 
@@ -151,13 +151,15 @@ export default function Footer() {
         </div>
 
         {/* Ligne inférieure de clôture */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-rule pt-6 text-xs text-mute sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-rule pt-6 text-xs text-mute lg:flex-row lg:flex-wrap lg:justify-center xl:justify-between">
           <p>
             &copy; {new Date().getFullYear()} Germain-Junior TWAMBA. Tous droits réservés.
           </p>
           <p className="text-center sm:text-right">
             Édité par le <strong>Club des Divergents</strong> &mdash; Goma (RDC) &amp; Louvain-la-Neuve (Belgique)
           </p>
+          <Link href="/confidentialite/" className="underline underline-offset-4 hover:text-accent">Confidentialité</Link>
+          <span className="text-center">Mis à jour le {siteUpdatedAt}</span>
           <button
             onClick={scrollToTop}
             className="inline-flex items-center gap-1.5 text-xs text-ink hover:text-accent font-medium border border-rule px-3 py-1.5 hover:bg-paper transition-colors"

@@ -3,6 +3,7 @@
 // Auteur  : Germain-Junior TWAMBA
 
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import { site } from '@/data/site';
 
@@ -108,9 +109,10 @@ export default function ContactPage() {
             Envoyer un message
           </h2>
           <p className="text-xs text-mute mb-6">
-            Remplissez ce formulaire pour envoyer un message direct depuis le site.
+            {site.formEndpoint ? 'Le formulaire transmet votre message au service d’envoi configuré pour le site.' : 'Le formulaire n’étant pas relié à un service d’envoi, vous pouvez écrire directement depuis votre application de messagerie.'}
           </p>
           <ContactForm />
+          <p className="mt-6 border-t border-rule pt-4 text-xs text-mute">Pour savoir quelles données peuvent être traitées, consultez la <Link href="/confidentialite/" className="underline underline-offset-4 hover:text-accent">note de confidentialité</Link>.</p>
         </div>
       </div>
     </div>

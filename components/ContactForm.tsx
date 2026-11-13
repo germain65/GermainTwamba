@@ -18,6 +18,13 @@ export default function ContactForm() {
   }
   const field = 'mt-1 min-h-11 w-full border border-rule bg-paper px-3 py-2';
   if (s === 'ok') return <p role="status" className="font-serif text-xl">Message envoyé. Vous recevrez une réponse par e-mail.</p>;
+  if (!site.formEndpoint) return (
+    <div className="space-y-3 text-sm leading-relaxed">
+      <p>Le formulaire n’est pas encore relié à un service d’envoi. Pour écrire, utilisez directement votre application de messagerie :</p>
+      <a href={`mailto:${site.email}`} className="inline-flex min-h-11 items-center bg-ink px-5 font-medium text-paper hover:opacity-85">Écrire à {site.email}</a>
+      <p className="text-xs text-mute">Le site ne transmet ni ne stocke votre message depuis cette page. Votre application de messagerie et son fournisseur traitent l’e-mail.</p>
+    </div>
+  );
   return (
     <form onSubmit={submit} className="max-w-xl space-y-5">
       <label className="block text-sm">Nom<input name="name" required minLength={2} autoComplete="name" className={field} /></label>

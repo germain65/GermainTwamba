@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import type { Book } from '@/data/books';
 import BookCover from './BookCover';
+import { asset } from '@/data/site';
 const sel = 'min-h-11 border border-rule bg-paper px-3 text-sm';
 export default function Library({ books }: { books: Book[] }) {
   const [q, setQ] = useState(''); const [cat, setCat] = useState(''); const [lang, setLang] = useState(''); const [sort, setSort] = useState('date');
@@ -35,7 +36,7 @@ export default function Library({ books }: { books: Book[] }) {
                 <p className="mt-2 text-sm text-mute">{b.author}, {b.publicationDate.slice(0, 4)}, {b.category}, {b.language === 'fr' ? 'français' : 'English'}</p>
               </div>
               <div className="col-span-2 sm:col-span-1 sm:self-center">
-                {b.downloadUrl ? <a href={b.downloadUrl} download className="inline-flex min-h-11 items-center bg-ink px-4 text-sm text-paper">Télécharger ({b.format})</a>
+                {b.downloadUrl ? <a href={asset(b.downloadUrl)} download className="inline-flex min-h-11 items-center bg-ink px-4 text-sm text-paper">Télécharger ({b.format})</a>
                   : <span className="text-sm text-mute">Fichier bientôt disponible</span>}
               </div>
             </li>))}

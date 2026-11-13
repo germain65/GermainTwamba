@@ -9,14 +9,19 @@ export interface Publication {
   pages?: number;
   href?: string;
   badge?: string;
+  externalHref?: string;
+  citation?: string;
+  downloadHref?: string;
 }
 
 export interface Project {
   title: string;
   description: string;
   tech: string[];
-  github?: string;
+  externalHref?: string;
   link?: string;
+  externalLabel?: string;
+  sourceLabel?: string;
 }
 
 export interface Milestone {
@@ -33,61 +38,93 @@ export const publications: Publication[] = [
     pages: 455,
     badge: 'Manuel de référence',
     href: '/bibliotheque/trigonometrie-plane-tome-1/',
+    downloadHref: '/books/tome-1-trigonometrie.pdf',
   },
   {
-    title: 'Éléments d’algèbre, d’analyse et de géométrie — Mathématiques pour finalistes très motivés (Tome II)',
-    venue: 'Éditions du Club des Divergents, Goma (RDC)',
+    title: 'Mathématiques pour finalistes très motivés — Tome II',
+    venue: 'Club des Divergents — Goma · Version 1.0 publiée sur Zenodo',
     year: '2026',
     pages: 465,
-    badge: 'Manuel de référence',
+    badge: 'Livre · accès ouvert',
     href: '/bibliotheque/algebre-analyse-geometrie-tome-2/',
+    downloadHref: '/books/tome-2-algebre-analyse.pdf',
+    externalHref: 'https://doi.org/10.5281/zenodo.23840933',
+    citation: 'Notice Zenodo v1.0 publiée le 31 octobre 2026 · DOI 10.5281/zenodo.23840933 · DOI de toutes les versions 10.5281/zenodo.23840932 · licence CC BY-NC-ND 4.0 · PDF de 20,7 Mo.',
   },
   {
-    title: 'Formulaire de trigonométrie et méthodes de résolution des triangles pour l’admission aux études d’ingénieur',
-    venue: 'Cahiers pédagogiques du Club des Divergents',
-    year: '2026',
-    badge: 'Fascicule méthodologique',
-    href: '/bibliotheque/trigonometrie-plane-tome-1/',
-  },
-  {
-    title: 'Aide-mémoire sur les nombres complexes et les fonctions transcendantes',
-    venue: 'Cahiers pédagogiques du Club des Divergents',
-    year: '2026',
-    badge: 'Fascicule de synthèse',
-    href: '/bibliotheque/algebre-analyse-geometrie-tome-2/',
+    title: 'Exercices d’algèbre',
+    venue: 'Document pédagogique attribué à Germain-Junior TWAMBA · également référencé sur MonBestSeller',
+    year: '2025',
+    pages: 22,
+    badge: 'Recueil d’exercices',
+    externalHref: 'https://questionnaire.monbestseller.com/auteur/liste/autres?page=2',
+    citation: 'Le profil MonBestSeller répertorie ce titre sous le nom « Germain Junior TWAMBA ». Le document consultable sur Scribd compte 22 pages.',
   },
 ];
 
 // ─── Projets scientifiques, informatiques et éditoriaux ──────────────────────
 export const projects: Project[] = [
   {
-    title: 'Collection « Mathématiques pour finalistes très motivés »',
+    title: 'Mathématiques pour finalistes très motivés — deux tomes',
     description:
-      'Conception éditoriale complète, composition typographique en LaTeX/TikZ et écriture d\'une série de manuels totalisant plus de 920 pages. Chaque chapitre propose une rigueur théorique, des exercices progressifs avec corrigés exhaustifs et des synthèses méthodologiques.',
-    tech: ['LaTeX', 'LuaLaTeX', 'TikZ', 'Microtype', 'Pédagogie mathématique'],
+      'Une collection de manuels de mathématiques pour le secondaire scientifique et le début de l’université. Le tome II, publié en version 1.0 sur Zenodo le 31 octobre 2026, aborde les nombres complexes, l’analyse des fonctions réelles et la géométrie ; il propose exposés théoriques, méthodes et exercices corrigés. La notice fournit un DOI pérenne et une licence CC BY-NC-ND 4.0.',
+    tech: ['Trigonométrie', 'Algèbre', 'Analyse', 'Géométrie', 'Pédagogie'],
     link: '/bibliotheque/',
+    externalHref: 'https://doi.org/10.5281/zenodo.23840933',
+    externalLabel: 'Notice et DOI Zenodo',
+    sourceLabel: 'Voir les livres',
   },
   {
-    title: 'Initiative pédagogique « Le Club des Divergents » (Goma)',
+    title: 'L’Os d’Ishango — concours mathématique',
     description:
-      'Création et animation à Goma (RDC) d\'un club d\'émulation scientifique et maison d\'édition libre. L\'objectif est de briser les barrières d\'accès aux ressources éducatives d\'excellence en proposant des ouvrages scientifiques gratuits et exigeants pour la jeunesse africaine.',
-    tech: ['Édition libre', 'Pédagogie', 'Vulgarisation scientifique', 'RDC'],
-    link: '/a-propos/',
+      'Projet de site pour le concours de mathématiques L’Os d’Ishango. Le dépôt public associé à ce projet permet de consulter son code source et son évolution.',
+    tech: ['TypeScript', 'Concours de mathématiques', 'RDC'],
+    externalHref: 'https://github.com/germain65/L-os-d-ishango',
+    externalLabel: 'Code source GitHub',
   },
   {
-    title: 'Modélisation géométrique et figures scientifiques vectorielles',
+    title: 'Livre de mathématiques pour l’Examen d’État',
     description:
-      'Développement de scripts graphiques pour tracer avec exactitude mathématique des cercles trigonométriques orientés, des coniques, des courbes cyclométriques et des figures 3D de révolution pour l\'illustration de manuels scientifiques.',
-    tech: ['Asymptote', 'Python', 'Sympy', 'Matplotlib', 'Géométrie vectorielle'],
-    github: 'https://github.com/germain65',
+      'Le dépôt projet_exetat est présenté par son auteur comme un livre de mathématiques destiné aux finalistes congolais. Il prolonge le travail pédagogique de la collection publiée sur ce site.',
+    tech: ['Mathématiques', 'Examen d’État', 'RDC'],
+    externalHref: 'https://github.com/germain65/projet_exetat',
+    externalLabel: 'Dépôt GitHub',
+    link: '/bibliotheque/',
+    sourceLabel: 'Voir la collection',
   },
   {
-    title: 'Bibliothèque numérique et site web personnel',
+    title: 'Allons-y — transport à la demande',
     description:
-      'Plateforme web moderne construite en Next.js (App Router), TypeScript et Tailwind CSS. Export statique ultra-performant, recherche instantanée d\'ouvrages, visionneuse d\'aperçu de PDF sans rechargement, fiches bibliographiques détaillées et accessibilité soignée.',
-    tech: ['Next.js 15.1.6', 'React', 'TypeScript', 'Tailwind CSS', 'Schema.org SEO'],
-    github: 'https://github.com/germain65',
-    link: 'https://germain65.github.io',
+      'Application de transport à la demande pensée pour Goma et Bukavu, en République démocratique du Congo. Le dépôt public est décrit comme une application de ride-hailing.',
+    tech: ['JavaScript', 'Mobilité', 'Goma', 'Bukavu'],
+    externalHref: 'https://github.com/germain65/allons-y',
+    externalLabel: 'Code source GitHub',
+  },
+  {
+    title: 'Afrilearn — apprentissage des langues africaines',
+    description:
+      'Site d’apprentissage de langues africaines. Le dépôt public donne accès au code du projet.',
+    tech: ['HTML', 'Langues', 'Apprentissage'],
+    externalHref: 'https://github.com/germain65/afrilearn',
+    externalLabel: 'Code source GitHub',
+  },
+  {
+    title: 'Bibliothèque numérique Germain-Junior TWAMBA',
+    description:
+      'Le site officiel rassemble les ouvrages mathématiques, leurs fiches bibliographiques et leurs aperçus. Son code source et son historique sont consultables dans le dépôt du site.',
+    tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'GitHub Pages'],
+    externalHref: 'https://github.com/germain65/GermainTwamba',
+    externalLabel: 'Code source GitHub',
+    link: 'https://germain65.github.io/GermainTwamba/',
+    sourceLabel: 'Voir le site publié',
+  },
+  {
+    title: 'Génies en Herbe — Institut Mwanga',
+    description:
+      'Site consacré au championnat interclasses de Génies en Herbe de l’Institut Mwanga, à Goma.',
+    tech: ['HTML', 'Éducation', 'Goma'],
+    externalHref: 'https://github.com/germain65/Genie_en_herbe_mwanga',
+    externalLabel: 'Code source GitHub',
   },
 ];
 

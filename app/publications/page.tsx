@@ -5,6 +5,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { publications } from '@/data/content';
+import { asset } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Publications',
@@ -23,7 +24,7 @@ export default function PublicationsPage() {
           Publications &amp; Ouvrages
         </h1>
         <p className="mt-4 text-base text-mute leading-relaxed">
-          Les manuels de la collection <em>Mathématiques pour finalistes très motivés</em> constituent des références de travail complètes, avec cours structuré, aide-mémoire, questions de réflexion et exercices corrigés en détail.
+          Cette bibliographie rassemble les ouvrages de la collection, leurs références de dépôt et un recueil d’exercices signalé sur des plateformes publiques. Le tome II dispose d’une notice Zenodo avec DOI ; les liens distinguent les fiches de la bibliothèque des références externes.
         </p>
       </header>
 
@@ -62,16 +63,32 @@ export default function PublicationsPage() {
               <p className="text-sm text-mute">
                 {p.venue} &middot; <span className="font-mono">{p.year}</span>
               </p>
+              {p.citation && <p className="max-w-2xl pt-1 text-sm leading-relaxed text-ink/80">{p.citation}</p>}
+              {p.externalHref && (
+                <a href={p.externalHref} target="_blank" rel="noopener noreferrer" className="inline-flex pt-1 text-sm font-medium text-accent underline underline-offset-4 hover:text-ink">
+                  {p.title === 'Exercices d’algèbre' ? 'Voir la fiche MonBestSeller' : 'Consulter la notice Zenodo'} &nearr;
+                </a>
+              )}
+              {p.title === 'Exercices d’algèbre' && (
+                <a href="https://fr.scribd.com/document/896306264/alg-5" target="_blank" rel="noopener noreferrer" className="inline-flex pt-1 text-sm font-medium text-accent underline underline-offset-4 hover:text-ink">
+                  Voir le document sur Scribd &nearr;
+                </a>
+              )}
             </div>
 
             {p.href && (
-              <div className="shrink-0 self-start sm:self-center">
+              <div className="flex shrink-0 flex-wrap gap-2 self-start sm:self-center">
                 <Link
                   href={p.href}
                   className="inline-flex min-h-10 items-center border border-ink px-4 text-xs font-medium hover:bg-ink hover:text-paper transition-colors"
                 >
                   Consulter la fiche &rarr;
                 </Link>
+                {p.downloadHref && (
+                  <a href={asset(p.downloadHref)} download className="inline-flex min-h-10 items-center border border-rule px-4 text-xs font-medium hover:bg-tint">
+                    Télécharger le PDF ↓
+                  </a>
+                )}
               </div>
             )}
           </li>

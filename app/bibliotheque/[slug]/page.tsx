@@ -94,6 +94,10 @@ export default async function BookPage({ params }: P) {
     ['Licence',     b.license],
     ['ISBN',        b.isbn],
     ['DOI',         b.doi],
+    ['Version',     b.version],
+    ['DOI toutes versions', b.conceptDoi],
+    ['Fichier',     b.fileName],
+    ['Empreinte',   b.checksum],
   ];
 
   const ld = {
@@ -155,10 +159,15 @@ export default async function BookPage({ params }: P) {
               .map(([k, v]) => (
                 <div key={k} className="contents">
                   <dt className="border-b border-rule py-2 text-mute">{k}</dt>
-                  <dd className="border-b border-rule py-2">{v}</dd>
+                  <dd className="break-words border-b border-rule py-2">
+                    {(k === 'DOI' || k === 'DOI toutes versions') ? (
+                      <a href={`https://doi.org/${v}`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-accent">{v} &nearr;</a>
+                    ) : v}
+                  </dd>
                 </div>
               ))}
           </dl>
+          {b.doi && <p className="mt-3 max-w-xl text-xs leading-relaxed text-mute">Notice et citation complètes sur <a href={`https://doi.org/${b.doi}`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-accent">Zenodo</a>.</p>}
         </div>
       </div>
 

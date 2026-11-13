@@ -35,6 +35,8 @@ jobs:
         run: npm ci
 
       - name: Compiler le site statique
+        env:
+          NEXT_PUBLIC_FORM_ENDPOINT: ${{ vars.NEXT_PUBLIC_FORM_ENDPOINT }}
         run: npm run build
 
       - name: Téléverser l'artefact GitHub Pages

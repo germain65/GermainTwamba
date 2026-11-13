@@ -3,6 +3,7 @@
 // Auteur  : Germain-Junior TWAMBA
 
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/GermainTwamba';
+export const siteUpdatedAt = '13 novembre 2026';
 
 export const site = {
   name: 'Germain-Junior TWAMBA',
@@ -25,6 +26,7 @@ export const nav = [
   { href: '/bibliotheque/',   label: 'Bibliothèque' },
   { href: '/publications/',   label: 'Publications' },
   { href: '/projets/',        label: 'Projets' },
+  { href: '/curiosites/',     label: 'Curiosités' },
   { href: '/a-propos/',      label: 'À propos' },
   { href: '/contact/',       label: 'Contact' },
 ];

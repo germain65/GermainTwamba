@@ -29,6 +29,10 @@ export type Book = {
   license: string;
   isbn?: string;
   doi?: string;
+  conceptDoi?: string;
+  version?: string;
+  fileName?: string;
+  checksum?: string;
   featured?: boolean;
   tags: string[];
   series?: string;
@@ -304,7 +308,8 @@ const books: Book[] = [
     description:
       'Deuxième tome de la collection : nombres complexes, fonctions logarithmiques et exponentielles, questions de géométrie, avec corrigés complets et formulaire de mathématiques.',
     summary: [
-      'Ce volume marque l\'entrée dans les mathématiques fondamentales : algèbre, analyse réelle et géométrie. Il accompagne le passage du calcul technique du secondaire à la pensée abstraite de l\'université, en tissant des liens permanents entre représentations géométriques et rigueur analytique.',
+      'Deuxième volume d\'une série consacrée aux mathématiques de haut niveau pour le secondaire scientifique, cet ouvrage traite des nombres complexes, de l\'analyse des fonctions réelles (limites, continuité, dérivabilité, branches infinies, fonctions exponentielles et logarithmiques) ainsi que de la géométrie plane et dans l\'espace. Chaque chapitre combine exposé théorique, encadrés de méthode et exercices corrigés étape par étape.',
+      'Le livre s\'adresse aux élèves préparant l\'Examen d\'État et les concours d\'entrée en faculté polytechnique, aux étudiants de propédeutique et de première année universitaire, ainsi qu\'aux enseignants à la recherche d\'exercices approfondis.',
       'La première partie couvre les nombres complexes (formes algébrique, trigonométrique et exponentielle, formule de Moivre, racines n-ièmes) puis les fonctions logarithmiques et exponentielles, avec un riche contexte historique et un rappel sur les généralités des fonctions numériques. La deuxième partie est consacrée aux questions de géométrie synthétique.',
       'Une partie entière de corrigés détaillés, un formulaire de mathématiques, une bibliographie et un index alphabétique complètent l\'ouvrage. La collection est née au sein du Club des Divergents, initiative d\'émulation scientifique fondée à Goma pour mettre à la disposition de la jeunesse des outils pédagogiques au plus haut standard académique.',
     ],
@@ -328,11 +333,16 @@ const books: Book[] = [
     publicationDate: '2026-10-31',
     pageCount: 465,
     format: 'PDF',
-    fileSize: '20 Mo',
+    fileSize: '20,7 Mo',
     downloadUrl: '/books/tome-2-algebre-analyse.pdf',
     license: 'CC BY-NC-ND 4.0',
+    doi: '10.5281/zenodo.23840933',
+    conceptDoi: '10.5281/zenodo.23840932',
+    version: '1.0',
+    fileName: 'Maths pour finalistes très motivés - Tome 2 - Germain Junior TWAMBA.pdf',
+    checksum: 'MD5 62065a223df6de6c5afa2834a0ec3ee4',
     featured: true,
-    tags: ['algèbre', 'analyse', 'géométrie', 'nombres complexes', 'logarithmes', 'finalistes', 'RDC'],
+    tags: ['algèbre', 'analyse', 'géométrie', 'nombres complexes', 'fonctions réelles', 'limites', 'dérivabilité', 'logarithmes', 'Examen d’État', 'propédeutique', 'RDC'],
   },
 ];
 
