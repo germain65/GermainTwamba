@@ -89,7 +89,7 @@ site/
 
 Voici les **4 étapes** à suivre à chaque nouveau tome ou fascicule.
 
-### Étape 1 — Déposer les fichiers dans `public/books/`
+### Étape 1 : Déposer les fichiers dans `public/books/`
 
 | Fichier | Nom recommandé | Obligatoire ? |
 |---|---|---|
@@ -101,7 +101,7 @@ Voici les **4 étapes** à suivre à chaque nouveau tome ou fascicule.
 > **Format du PDF** : Pas de limite stricte, mais en dessous de 50 Mo de préférence.
 > Si votre PDF dépasse 50 Mo, utilisez un lien GitHub Releases à la place (voir [§10](#10-questions-fréquentes)).
 
-### Étape 2 — Ajouter une entrée dans `data/books.ts`
+### Étape 2 : Ajouter une entrée dans `data/books.ts`
 
 Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle **avant** la ligne `// ─── Prochains ouvrages` :
 
@@ -110,9 +110,9 @@ Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle *
   id: 'gjt-t3-2027',                         // identifiant unique (jamais réutilisé)
   slug: 'mon-titre-tome-3',                  // utilisé dans l'URL : /bibliotheque/mon-titre-tome-3/
   title: 'Mon titre complet',
-  subtitle: 'Mathématiques pour finalistes très motivés — Tome III',
+  subtitle: 'Mathématiques pour finalistes très motivés, Tome III',
   author: 'Germain-Junior TWAMBA',
-  publisher: 'Club des Divergents — Goma, RDC',
+  publisher: 'Club des Divergents (Goma, RDC)',
   series: 'Mathématiques pour finalistes très motivés',
   volume: 3,
   description: 'Une phrase courte décrivant le livre (affichée dans les listes).',
@@ -128,7 +128,7 @@ Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle *
   ],
   toc: [],                                   // laisser [] ou remplir comme tocTome1 / tocTome2
   category: 'Mathématiques',
-  level: 'Fin de secondaire — début d\'université',
+  level: 'Fin de secondaire, début d\'université',
   language: 'fr',
   publicationDate: '2027-01-01',             // format obligatoire : AAAA-MM-JJ
   pageCount: 300,
@@ -143,7 +143,7 @@ Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle *
 
 > ⚠️ **L'`id` et le `slug` doivent être uniques.** Si vous dupliquez l'un ou l'autre, le build échouera avec un message d'erreur clair.
 
-### Étape 3 — Vérifier en local
+### Étape 3 : Vérifier en local
 
 ```bash
 npm run dev
@@ -152,7 +152,7 @@ npm run dev
 
 Le nouveau livre doit apparaître dans la liste. Cliquez dessus pour vérifier la fiche détaillée.
 
-### Étape 4 — Publier
+### Étape 4 : Publier
 
 ```bash
 git add .
@@ -346,4 +346,4 @@ Oui. Mettez `language: 'en'` dans l'entrée `books.ts`. La fiche s'affichera nor
 
 ---
 
-*Dernière mise à jour : novembre 2026 — Germain-Junior TWAMBA / Club des Divergents, Goma (RDC)*
+*Dernière mise à jour : novembre 2026 · Germain-Junior TWAMBA / Club des Divergents, Goma (RDC)*

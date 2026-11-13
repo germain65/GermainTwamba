@@ -29,7 +29,7 @@ export default function Home() {
           </p>
 
           <p className="mt-6 font-serif text-base md:text-lg leading-relaxed text-ink/90 max-w-[56ch]">
-            Fondateur du <em>Club des Divergents</em> à Goma (RDC) et étudiant en sciences de l&apos;ingénieur à l&apos;<strong>École polytechnique de Louvain (UCLouvain)</strong> en Belgique, j&apos;ai créé cette plateforme comme le point d&apos;ancrage unique où tous mes livres &mdash; actuels et futurs &mdash; sont mis à disposition gratuitement, téléchargeables au format PDF pour les élèves, les enseignants et les passionnés de sciences.
+            Fondateur du <em>Club des Divergents</em> à Goma (RDC) et étudiant en sciences de l&apos;ingénieur à l&apos;<strong>École polytechnique de Louvain (UCLouvain)</strong> en Belgique, j&apos;ai créé cette plateforme comme le point d&apos;ancrage unique où tous mes livres, actuels et futurs, sont mis à disposition gratuitement, téléchargeables au format PDF pour les élèves, les enseignants et les passionnés de sciences.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -75,7 +75,7 @@ export default function Home() {
             &laquo; La mathématique est l’art de donner le même nom à des choses différentes. &raquo;
           </p>
           <footer className="mt-2 text-sm font-mono text-mute">
-            &mdash; Henri Poincar&eacute; &middot; En exergue de la collection
+            Henri Poincar&eacute; &middot; En exergue de la collection
           </footer>
         </blockquote>
       </section>

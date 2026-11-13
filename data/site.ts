@@ -13,7 +13,7 @@ export const site = {
   basePath: BASE_PATH,
   email: 'amandotwamba@gmail.com',
   institution: 'École polytechnique de Louvain (UCLouvain)',
-  initiative: 'Club des Divergents — Goma (RDC)',
+  initiative: 'Club des Divergents, Goma (RDC)',
   links: [
     { label: 'GitHub',   href: 'https://github.com/germain65' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/germain-junior-twamba-697519338/' },

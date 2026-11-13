@@ -9,7 +9,7 @@ import { site } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contacter Germain-Junior TWAMBA — auteur des manuels de mathématiques pour finalistes.',
+  description: 'Contacter Germain-Junior TWAMBA, auteur des manuels de mathématiques pour finalistes.',
   alternates: { canonical: '/contact/' },
 };
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:text-accent hover:underline"
                 >
-                  LinkedIn &mdash; Germain-Junior Twamba ↗
+                  LinkedIn &middot; Germain-Junior Twamba ↗
                 </a>
               </p>
               <p className="mt-1 text-xs text-mute">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:text-accent hover:underline"
                 >
-                  GitHub &mdash; @germain65 ↗
+                  GitHub &middot; @germain65 ↗
                 </a>
               </p>
               <p className="mt-1 text-xs text-mute">

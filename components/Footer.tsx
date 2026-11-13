@@ -144,8 +144,8 @@ export default function Footer() {
                 className="underline hover:text-accent"
               >
                 CC BY-NC-ND 4.0
-              </a>{' '}
-              &mdash; téléchargement et partage libres, sans modification ni usage commercial.
+              </a>.{' '}
+              Téléchargement et partage libres, sans modification ni usage commercial.
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Germain-Junior TWAMBA. Certains droits réservés.
           </p>
           <p className="text-center sm:text-right">
-            Édité par le <strong>Club des Divergents</strong> &mdash; Goma (RDC) &amp; Louvain-la-Neuve (Belgique)
+            Édité par le <strong>Club des Divergents</strong>, Goma (RDC) &amp; Louvain-la-Neuve (Belgique)
           </p>
           <Link href="/confidentialite/" className="underline underline-offset-4 hover:text-accent">Confidentialité</Link>
           <span className="text-center">Mis à jour le {siteUpdatedAt}</span>

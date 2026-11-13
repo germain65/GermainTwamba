@@ -199,7 +199,7 @@ const tocTome2: TocEntry[] = [
   { title: 'Abréviations et acronymes', page: 'xvii' },
   { title: 'Notations et symboles', page: 'xix' },
   {
-    title: 'Partie I — Algèbre et Analyse', page: '1',
+    title: 'Partie I : Algèbre et Analyse', page: '1',
     items: [
       {
         num: '1', title: 'Les Nombres Complexes', page: '3',
@@ -223,13 +223,13 @@ const tocTome2: TocEntry[] = [
     ],
   },
   {
-    title: 'Partie II — Géométrie', page: '165',
+    title: 'Partie II : Géométrie', page: '165',
     items: [
       { num: '3', title: 'Questions de géométrie', page: '167' },
     ],
   },
   {
-    title: 'Partie III — Corrigés', page: '177',
+    title: 'Partie III : Corrigés', page: '177',
     items: [
       { title: 'Corrigés du chapitre 1', page: '179' },
       { title: 'Corrigés du chapitre 2', page: '249' },
@@ -237,14 +237,14 @@ const tocTome2: TocEntry[] = [
     ],
   },
   {
-    title: 'Partie IV — Annexes et Références', page: '409',
+    title: 'Partie IV : Annexes et Références', page: '409',
     items: [
       { num: 'A', title: 'Formulaire de mathématiques', page: '411' },
       { title: 'Bibliographie', page: '429' },
     ],
   },
   {
-    title: 'Partie V — Index Alphabétique', page: '433',
+    title: 'Partie V : Index Alphabétique', page: '433',
     items: [
       { title: 'Index alphabétique', page: '435' },
       { title: 'À propos de l\'auteur', page: '441' },
@@ -258,9 +258,9 @@ const books: Book[] = [
     id: 'gjt-t1-2026',
     slug: 'trigonometrie-plane-tome-1',
     title: 'Trigonométrie plane',
-    subtitle: 'Mathématiques pour finalistes très motivés — Tome I',
+    subtitle: 'Mathématiques pour finalistes très motivés, Tome I',
     author: 'Germain-Junior TWAMBA',
-    publisher: 'Club des Divergents — Goma, RDC',
+    publisher: 'Club des Divergents (Goma, RDC)',
     series: SERIES,
     volume: 1,
     description:
@@ -285,7 +285,7 @@ const books: Book[] = [
     ],
     toc: tocTome1,
     category: 'Mathématiques',
-    level: 'Fin de secondaire — début d\'université',
+    level: 'Fin de secondaire, début d\'université',
     language: 'fr',
     publicationDate: '2026-10-24',
     pageCount: 455,
@@ -300,9 +300,9 @@ const books: Book[] = [
     id: 'gjt-t2-2026',
     slug: 'algebre-analyse-geometrie-tome-2',
     title: 'Éléments d\'algèbre, d\'analyse et de géométrie',
-    subtitle: 'Mathématiques pour finalistes très motivés — Tome II',
+    subtitle: 'Mathématiques pour finalistes très motivés, Tome II',
     author: 'Germain-Junior TWAMBA',
-    publisher: 'Club des Divergents — Goma, RDC',
+    publisher: 'Club des Divergents (Goma, RDC)',
     series: SERIES,
     volume: 2,
     description:
@@ -328,7 +328,7 @@ const books: Book[] = [
     ],
     toc: tocTome2,
     category: 'Mathématiques',
-    level: 'Fin de secondaire — début d\'université',
+    level: 'Fin de secondaire, début d\'université',
     language: 'fr',
     publicationDate: '2026-10-31',
     pageCount: 465,

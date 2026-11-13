@@ -27,7 +27,7 @@ export interface Project {
 // ─── Publications scientifiques et pédagogiques ──────────────────────────────
 export const publications: Publication[] = [
   {
-    title: 'Trigonométrie plane — Mathématiques pour finalistes très motivés (Tome I)',
+    title: 'Trigonométrie plane : Mathématiques pour finalistes très motivés (Tome I)',
     venue: 'Éditions du Club des Divergents, Goma (RDC)',
     year: '2026',
     pages: 455,
@@ -36,8 +36,8 @@ export const publications: Publication[] = [
     downloadHref: '/books/tome-1-trigonometrie.pdf',
   },
   {
-    title: 'Mathématiques pour finalistes très motivés — Tome II',
-    venue: 'Club des Divergents — Goma · Version 1.0 publiée sur Zenodo',
+    title: 'Mathématiques pour finalistes très motivés, Tome II',
+    venue: 'Club des Divergents, Goma · Version 1.0 publiée sur Zenodo',
     year: '2026',
     pages: 465,
     badge: 'Livre · accès ouvert',
@@ -60,7 +60,7 @@ export const publications: Publication[] = [
 // ─── Projets scientifiques, informatiques et éditoriaux ──────────────────────
 export const projects: Project[] = [
   {
-    title: 'Mathématiques pour finalistes très motivés — deux tomes',
+    title: 'Mathématiques pour finalistes très motivés, deux tomes',
     description:
       'Une collection de manuels de mathématiques pour le secondaire scientifique et le début de l’université. Le tome II, publié en version 1.0 sur Zenodo le 31 octobre 2026, aborde les nombres complexes, l’analyse des fonctions réelles et la géométrie ; il propose exposés théoriques, méthodes et exercices corrigés. La notice fournit un DOI pérenne et une licence CC BY-NC-ND 4.0.',
     tech: ['Trigonométrie', 'Algèbre', 'Analyse', 'Géométrie', 'Pédagogie'],
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     sourceLabel: 'Voir les livres',
   },
   {
-    title: 'L’Os d’Ishango — concours mathématique',
+    title: 'L’Os d’Ishango : concours mathématique',
     description:
       'Projet de site pour le concours de mathématiques L’Os d’Ishango. Le dépôt public associé à ce projet permet de consulter son code source et son évolution.',
     tech: ['TypeScript', 'Concours de mathématiques', 'RDC'],
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     sourceLabel: 'Voir le site publié',
   },
   {
-    title: 'Génies en Herbe — Institut Mwanga',
+    title: 'Génies en Herbe, Institut Mwanga',
     description:
       'Site consacré au championnat interclasses de Génies en Herbe de l’Institut Mwanga, à Goma.',
     tech: ['HTML', 'Éducation', 'Goma'],

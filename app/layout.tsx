@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     // JPG 1200×630 : les réseaux sociaux (WhatsApp, Facebook, LinkedIn, X) n'affichent pas les SVG
-    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: `${site.name} — ${site.tagline}` }],
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: `${site.name} : ${site.tagline}` }],
   },
   twitter: {
     card: 'summary_large_image',

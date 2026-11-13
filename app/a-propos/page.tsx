@@ -9,7 +9,7 @@ import { asset } from '@/data/site';
 export const metadata: Metadata = {
   title: 'À propos de l’auteur',
   description:
-    'Germain-Junior TWAMBA — auteur scientifique, étudiant à l’École polytechnique de Louvain (UCLouvain) et fondateur du Club des Divergents à Goma (RDC).',
+    'Germain-Junior TWAMBA, auteur scientifique, étudiant à l’École polytechnique de Louvain (UCLouvain) et fondateur du Club des Divergents à Goma (RDC).',
   alternates: { canonical: '/a-propos/' },
 };
 
@@ -17,17 +17,17 @@ const timeline = [
   { year: 'Déc. 2006', text: 'Naissance à Goma, République Démocratique du Congo.' },
   { year: '2020', text: 'Découverte passionnée des mathématiques pendant le confinement, à l’âge de 13 ans.' },
   { year: '2020–2026', text: 'Formation aux humanités scientifiques à l’Institut Mwanga de Goma.' },
-  { year: '2026', text: 'Fondation du Club des Divergents à Goma — initiative d’émulation et maison d’édition libre.' },
+  { year: '2026', text: 'Fondation du Club des Divergents à Goma : initiative d’émulation et maison d’édition libre.' },
   { year: 'Oct. 2026', text: 'Publication du Tome I : Trigonométrie plane (455 pages).' },
   { year: 'Oct. 2026', text: 'Publication du Tome II : Éléments d’algèbre, d’analyse et de géométrie (465 pages).' },
-  { year: '2026–présent', text: 'Études d’ingénieur civil à l’École polytechnique de Louvain — UCLouvain, Belgique.' },
+  { year: '2026–présent', text: 'Études d’ingénieur civil à l’École polytechnique de Louvain (UCLouvain, Belgique).' },
 ];
 
 const interests = [
   { titre: 'Trigonométrie & Géométrie', desc: 'Des cercles trigonométriques aux lois des cosinus, la rigueur de la géométrie plane et sphérique.' },
-  { titre: 'Algèbre & Analyse', desc: 'Nombres complexes, fonctions logarithmiques, structures algébriques — l’art d’extraire les structures profondes.' },
+  { titre: 'Algèbre & Analyse', desc: 'Nombres complexes, fonctions logarithmiques, structures algébriques : l’art d’extraire les structures profondes.' },
   { titre: 'Pédagogie mathématique', desc: 'Rendre accessibles à la jeunesse africaine des outils pédagogiques au plus haut standard académique.' },
-  { titre: 'Informatique & Typographie', desc: 'LaTeX, Asymptote, Python, développement web — allier rigueur mathématique et composition numérique de pointe.' },
+  { titre: 'Informatique & Typographie', desc: 'LaTeX, Asymptote, Python, développement web : allier rigueur mathématique et composition numérique de pointe.' },
 ];
 
 // Galerie : portraits et lieux
@@ -75,7 +75,7 @@ export default function About() {
               Il se forme à l&apos;Institut Mwanga de Goma, puis rejoint l&apos;École polytechnique de Louvain
               (UCLouvain) en Belgique pour y poursuivre des études d&apos;ingénieur. Convaincu que la réussite
               dans les études supérieures ne dépend pas d&apos;une facilité innée mais de la rigueur de la
-              méthode, il fonde à Goma le <strong>Club des Divergents</strong> &mdash; une forme de maison
+              méthode, il fonde à Goma le <strong>Club des Divergents</strong>, une forme de maison
               d&apos;édition libre dont l&apos;objectif est de mettre à la disposition de la jeunesse africaine
               des outils pédagogiques au plus haut standard académique.
             </p>
@@ -88,11 +88,11 @@ export default function About() {
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <a href="https://github.com/germain65" target="_blank" rel="noopener noreferrer"
               className="inline-flex min-h-10 items-center gap-2 border border-rule px-4 hover:bg-tint">
-              GitHub &mdash; @germain65
+              GitHub &middot; @germain65
             </a>
             <a href="https://www.linkedin.com/in/germain-junior-twamba-697519338/" target="_blank" rel="noopener noreferrer"
               className="inline-flex min-h-10 items-center gap-2 border border-rule px-4 hover:bg-tint">
-              LinkedIn &mdash; Germain-Junior Twamba
+              LinkedIn &middot; Germain-Junior Twamba
             </a>
             <a href="mailto:amandotwamba@gmail.com"
               className="inline-flex min-h-10 items-center gap-2 border border-rule px-4 hover:bg-tint">
