@@ -1,9 +1,11 @@
 // Fichier : components/Gallery.tsx
-// Rôle    : Galerie photos responsive avec lightbox au clic
+// Rôle    : Galerie photos responsive avec lightbox au clic et support du basePath
+// Auteur  : Germain-Junior TWAMBA
 
 'use client';
 
 import { useState } from 'react';
+import { asset } from '@/data/site';
 
 interface Photo {
   src: string;
@@ -29,7 +31,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
             aria-label={`Ouvrir : ${p.alt}`}
           >
             <img
-              src={p.src}
+              src={asset(p.src)}
               alt={p.alt}
               loading="lazy"
               className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -64,7 +66,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={photos[open].src}
+              src={asset(photos[open].src)}
               alt={photos[open].alt}
               className="max-h-[85vh] max-w-[85vw] object-contain shadow-2xl"
             />

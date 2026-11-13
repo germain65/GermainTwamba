@@ -1,9 +1,11 @@
 // Fichier : components/PdfPreview.tsx
 // Rôle    : Visionneuse d'aperçu PDF interactive (navigation entre pages, vignettes)
+// Auteur  : Germain-Junior TWAMBA
 
 'use client';
 
 import { useState } from 'react';
+import { asset } from '@/data/site';
 
 interface PdfPreviewProps {
   pages: string[];
@@ -56,7 +58,7 @@ export default function PdfPreview({ pages, title, pdfUrl }: PdfPreviewProps) {
       {/* Page principale */}
       <div className="border border-rule bg-tint p-2 sm:p-4">
         <img
-          src={pages[current]}
+          src={asset(pages[current])}
           alt={`${title}, page ${current + 1} de l'aperçu`}
           className="mx-auto h-auto max-h-[85vh] w-auto max-w-full shadow-sm"
         />
@@ -74,7 +76,7 @@ export default function PdfPreview({ pages, title, pdfUrl }: PdfPreviewProps) {
                 k === current ? 'border-accent' : 'border-transparent hover:border-rule'
               }`}
             >
-              <img src={page} alt="" loading="lazy" className="w-full" />
+              <img src={asset(page)} alt="" loading="lazy" className="w-full" />
             </button>
           </li>
         ))}
@@ -85,7 +87,7 @@ export default function PdfPreview({ pages, title, pdfUrl }: PdfPreviewProps) {
         <p className="mt-3 text-sm">
           <a
             className="underline hover:text-accent"
-            href={pdfUrl}
+            href={asset(pdfUrl)}
             target="_blank"
             rel="noopener noreferrer"
           >

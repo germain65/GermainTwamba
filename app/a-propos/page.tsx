@@ -4,6 +4,7 @@
 
 import type { Metadata } from 'next';
 import Gallery from '@/components/Gallery';
+import { asset } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'À propos de l’auteur',
@@ -53,7 +54,7 @@ export default function About() {
       <section className="grid gap-10 md:grid-cols-[300px_1fr]" aria-labelledby="bio">
         <div>
           <img
-            src="/photos/germain-portrait.jpg"
+            src={asset('/photos/germain-portrait.jpg')}
             alt="Germain-Junior TWAMBA"
             className="w-full border-2 border-ink object-cover shadow-md"
           />

@@ -5,7 +5,7 @@
 
 import Link from 'next/link';
 import { allBooks } from '@/data/books';
-import { site } from '@/data/site';
+import { site, asset } from '@/data/site';
 import BookCover from '@/components/BookCover';
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="relative mx-auto w-full max-w-sm md:max-w-none">
           <div className="relative overflow-hidden border-2 border-ink bg-tint shadow-xl">
             <img
-              src="/photos/germain-portrait.jpg"
+              src={asset('/photos/germain-portrait.jpg')}
               alt="Germain-Junior TWAMBA"
               className="aspect-[4/5] w-full object-cover object-top"
             />
@@ -144,7 +144,7 @@ export default function Home() {
                 </Link>
                 {tome1.downloadUrl && (
                   <a
-                    href={tome1.downloadUrl}
+                    href={asset(tome1.downloadUrl)}
                     download
                     className="inline-flex min-h-10 items-center border border-ink px-4 text-xs font-medium hover:bg-tint transition-colors"
                   >
@@ -199,7 +199,7 @@ export default function Home() {
                 </Link>
                 {tome2.downloadUrl && (
                   <a
-                    href={tome2.downloadUrl}
+                    href={asset(tome2.downloadUrl)}
                     download
                     className="inline-flex min-h-10 items-center border border-ink px-4 text-xs font-medium hover:bg-tint transition-colors"
                   >

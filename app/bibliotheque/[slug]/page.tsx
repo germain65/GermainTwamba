@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allBooks, frDate, getBook } from '@/data/books';
 import type { TocEntry } from '@/data/books';
-import { site } from '@/data/site';
+import { site, asset } from '@/data/site';
 import BookCover from '@/components/BookCover';
 import PdfPreview from '@/components/PdfPreview';
 
@@ -137,7 +137,7 @@ export default async function BookPage({ params }: P) {
           <div className="mt-8">
             {b.downloadUrl ? (
               <a
-                href={b.downloadUrl}
+                href={asset(b.downloadUrl)}
                 download
                 className="inline-flex min-h-11 items-center bg-ink px-6 font-sans text-sm text-paper hover:opacity-80"
               >
