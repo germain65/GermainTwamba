@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { siteUpdatedAt } from '@/data/site';
+import { asset, siteUpdatedAt } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Curiosités',
@@ -10,30 +10,43 @@ export const metadata: Metadata = {
 const notes = [
   {
     number: '01',
-    theme: 'Identité remarquable',
+    theme: 'Géométrie projective',
     date: siteUpdatedAt,
-    title: 'Une différence de carrés qui cache quatre facteurs',
-    body: 'x⁴ + y⁴ + z⁴ − 2x²y² − 2x²z² − 2y²z² = (x+y+z)(x+y−z)(x−y+z)(x−y−z).',
-    detail: 'On peut le voir en regroupant d’abord l’expression comme (x² + y² − z²)² − (2xy)², puis en appliquant deux fois a² − b².',
-    source: 'Démonstration algébrique développée dans cette note.',
+    title: 'Le théorème de Pascal',
+    body: 'Six points sur une conique déterminent, par les intersections des côtés opposés de l’hexagone, trois points alignés.',
+    detail: 'Énoncé projectif, preuve analytique détaillée sur une conique paramétrée, exemple calculé et pistes pour aller plus loin.',
+    source: 'Dossier PDF de 6 pages, composé en LaTeX avec un schéma TikZ.',
+    pdf: '01-pascal.pdf',
   },
   {
     number: '02',
-    theme: 'Géométrie',
+    theme: 'Géométrie japonaise',
     date: siteUpdatedAt,
-    title: 'Le cercle n’a pas besoin de π pour être un cercle',
-    body: 'Le nombre π apparaît quand on compare la circonférence d’un cercle à son diamètre : C ÷ d = π, quel que soit le cercle.',
-    detail: 'Agrandir le cercle multiplie sa circonférence et son diamètre par le même facteur ; leur rapport reste donc invariant.',
-    source: 'Définition du nombre π comme rapport C/d ; justification par similitude des cercles.',
+    title: 'Les problèmes japonais de géométrie',
+    body: 'Les sangaku sont des tablettes votives sur lesquelles des fidèles gravaient des problèmes et des figures mathématiques.',
+    detail: 'Repères historiques et étude complète d’une famille de cercles tangents : construction, preuve par inversion des rayons, exemple numérique et exercices.',
+    source: 'Dossier PDF de 6 pages, avec diagrammes TikZ et références historiques.',
+    pdf: '02-sangaku.pdf',
   },
   {
     number: '03',
-    theme: 'Petit jeu de nombres',
+    theme: 'Algèbre linéaire et géométrie',
     date: siteUpdatedAt,
-    title: 'Le nombre 9 se reconnaît dans la somme des chiffres',
-    body: 'Un entier et la somme de ses chiffres ont le même reste lorsqu’on les divise par 9.',
-    detail: 'C’est parce que 10 laisse un reste 1 modulo 9 : 10, 100 et 1 000 valent tous 1 modulo 9. Exemple : 4 827 et 4 + 8 + 2 + 7 = 21 ont le même reste, soit 3.',
-    source: 'Démonstration par écriture décimale et congruences, incluse dans cette note.',
+    title: 'Les matrices de Gram',
+    body: 'Une matrice de Gram rassemble les produits scalaires d’une famille de vecteurs et encode leurs longueurs, leurs angles et leur dépendance.',
+    detail: 'Définition, preuve de positivité, rang, déterminant et volume, moindres carrés, exemples détaillés et exercices.',
+    source: 'Dossier PDF de 7 pages composé en LaTeX, avec figure TikZ et démonstrations.',
+    pdf: '03-matrices-de-gram.pdf',
+  },
+  {
+    number: '04',
+    theme: 'Modélisation et dynamique',
+    date: siteUpdatedAt,
+    title: 'Le modèle de Verhulst',
+    body: 'La croissance logistique décrit une population qui croît vite quand elle est rare, puis ralentit à mesure qu’elle approche une capacité limite.',
+    detail: 'Équation différentielle, solution, équilibres, point d’inflexion, exemple numérique, estimation des paramètres et limites du modèle.',
+    source: 'Dossier PDF de 7 pages composé en LaTeX, avec courbe TikZ et repères historiques.',
+    pdf: '04-modele-de-verhulst.pdf',
   },
 ];
 
@@ -44,7 +57,7 @@ export default function CuriositesPage() {
         <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">Une idée à la fois</span>
         <h1 className="mt-2 font-serif text-4xl md:text-5xl text-ink">Curiosités</h1>
         <p className="mt-4 text-base text-mute leading-relaxed">
-          Des petites découvertes de mathématiques, de sciences ou d’ailleurs : une formule étonnante, une question, un fait à garder en tête. Cette page pourra s’enrichir au fil du temps.
+          Des dossiers détaillés à lire ou à télécharger. Chaque curiosité est publiée en PDF et pourra être complétée au fil du temps.
         </p>
       </header>
 
@@ -59,7 +72,10 @@ export default function CuriositesPage() {
             <h2 className="mt-5 font-serif text-2xl font-bold leading-snug text-ink">{note.title}</h2>
             <p className="mt-4 border-l-2 border-accent pl-4 font-serif text-lg leading-relaxed text-ink">{note.body}</p>
             <p className="mt-4 text-sm leading-relaxed text-mute">{note.detail}</p>
-            <p className="mt-4 border-t border-rule pt-3 text-xs leading-relaxed text-mute"><span className="font-semibold text-ink">Source :</span> {note.source}</p>
+            <p className="mt-4 border-t border-rule pt-3 text-xs leading-relaxed text-mute">{note.source}</p>
+            <a href={asset(`/curiosites/${note.pdf}`)} target="_blank" rel="noreferrer" className="mt-5 inline-flex border-2 border-ink bg-accent px-4 py-2 font-mono text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+              Lire le dossier PDF <span className="ml-2" aria-hidden="true">↗</span>
+            </a>
           </article>
         ))}
       </div>

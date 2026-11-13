@@ -1,0 +1,175 @@
+\input{preambule.tex}
+\begin{document}
+\titreDossier{Le théorème de Pascal}{Hexagone inscrit, conique et droite de Pascal}{
+Un résultat projectif étonnant : six points choisis sur une même conique engendrent, par les intersections de côtés opposés, trois points toujours alignés. Ce dossier construit l'énoncé, le cadre projectif, une preuve analytique complète et un exemple calculé.}
+
+\section*{Pourquoi six points donnent-ils une droite ?}
+Un cercle paraît d'abord être un objet de métrique : on parle de centre, de rayon et de distance. Le théorème de Pascal révèle une autre structure. Si l'on ne retient que les incidences entre points et droites, tous les cercles et toutes les coniques non dégénérées ont le même comportement. Six points d'une conique suffisent à faire apparaître une nouvelle droite.
+
+\begin{theoreme}[Pascal]
+Soient $A,B,C,A',B',C'$ six points distincts d'une conique non dégénérée du plan projectif. Formons les trois intersections
+\[
+ P=AB'\cap A'B,\qquad Q=BC'\cap B'C,\qquad R=CA'\cap C'A.
+\]
+Alors $P,Q,R$ sont alignés. La droite qui les contient s'appelle la \emph{droite de Pascal} de la configuration.
+\end{theoreme}
+
+Les lettres indiquent un appariement précis des six côtés de l'hexagone croisé. On peut lire le parcours des sommets comme $A,B',C,A',B,C'$. Les trois couples de côtés opposés sont alors ceux qui définissent $P,Q,R$. La formulation est valable pour une ellipse, une parabole ou une hyperbole. Dans le plan affine, deux côtés parallèles n'ont pas d'intersection visible ; dans le plan projectif, ils se rencontrent en un point à l'infini et l'énoncé reste uniforme.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.92, every node/.style={font=\small}]
+  \draw[thick,Forest] (0,0) ellipse (3 and 1.75);
+  \coordinate (A)  at ({3*cos(18)},{1.75*sin(18)});
+  \coordinate (Bp) at ({3*cos(76)},{1.75*sin(76)});
+  \coordinate (C)  at ({3*cos(139)},{1.75*sin(139)});
+  \coordinate (Ap) at ({3*cos(198)},{1.75*sin(198)});
+  \coordinate (B)  at ({3*cos(254)},{1.75*sin(254)});
+  \coordinate (Cp) at ({3*cos(318)},{1.75*sin(318)});
+  \draw[gray!75] (A)--(Bp)--(C)--(Ap)--(B)--(Cp)--cycle;
+  % Schema explicatif : la droite est reportee a part pour rester lisible.
+  \coordinate (P) at (-3.45,1.25);
+  \coordinate (Q) at (-3.45,0);
+  \coordinate (R) at (-3.45,-1.25);
+  \draw[Forest,very thick] ($(P)+(0,-0.4)$)--($(R)+(0,0.4)$);
+  \foreach \X/\lab/\pos in {A/A/above right,Bp/{B'}/above right,C/C/above left,Ap/{A'}/below left,B/B/below left,Cp/{C'}/below right}
+  \fill[Ink] (\X) circle (2pt) node[\pos] {$\lab$};
+  \foreach \X/\lab in {P/P,Q/Q,R/R}
+    \fill[BrickRed] (\X) circle (2.5pt) node[above right] {$\lab$};
+  \node[Forest,fill=white,inner sep=1pt] at (2.0,-0.15) {droite de Pascal};
+\end{tikzpicture}
+\end{center}
+\smallskip
+\textit{Schéma de principe, sans échelle : dans la configuration réelle, $P,Q,R$ sont les intersections des côtés opposés et appartiennent à une même droite.}
+
+\newpage
+\section{Le langage projectif nécessaire}
+Un point projectif est une classe de triplets non nuls $(x,y,z)$, notée $[x:y:z]$, où deux triplets représentent le même point lorsqu'ils diffèrent par un facteur non nul. La droite d'équation $ux+vy+wz=0$ est représentée par le triplet de coefficients $[u:v:w]$. L'intersection de deux droites se calcule par produit vectoriel de leurs triplets ; la droite passant par deux points se calcule de la même façon.
+
+Cette écriture traite les points à l'infini sans ajouter de cas particuliers. Dans la carte affine $z=1$, un point ordinaire $[x:y:1]$ a pour coordonnées $(x,y)$. Les points $[x:y:0]$ représentent les directions. Par exemple, les droites parallèles $y=0$ et $y=1$ n'ont aucune intersection dans la carte affine, mais leurs représentantes projectives se coupent en $[1:0:0]$.
+
+Une transformation projective est induite par une matrice inversible $3\times3$. Elle envoie droites sur droites et conserve l'incidence, l'alignement et les coniques. Elle ne conserve pas en général les longueurs ni les angles. C'est pourquoi Pascal appartient naturellement à la géométrie projective.
+
+\begin{proposition}[Réduction de la conique]
+Toute conique réelle non dégénérée peut, par un changement projectif de coordonnées, être ramenée à une conique standard. Il suffit donc de prouver le théorème dans une représentation commode : les transformations projectives préserveront la collinearité obtenue.
+\end{proposition}
+
+Pour la preuve qui suit, on choisit
+\[
+ \mathcal C: xy+yz+zx=0.
+\]
+Trois points de cette conique sont
+\[
+ A=[1:0:0],\qquad B=[0:1:0],\qquad C=[0:0:1].
+\]
+Ils ne sont pas alignés. Un théorème fondamental de la géométrie projective permet de fixer trois points non alignés par un choix de coordonnées ; les trois autres points deviennent des paramètres sur la même conique.
+
+\subsection{Paramétrer la conique}
+Pour tout réel $u$, posons
+\[
+ X(u)=[u:1-u:u(u-1)].
+\]
+La substitution donne
+\[
+ u(1-u)+(1-u)u(u-1)+u\,u(u-1)=0,
+\]
+donc $X(u)\in\mathcal C$. De plus, $X(0)=B$, $X(1)=A$ et la valeur restante de la paramétrisation couvre la conique. Les trois points autres que $A,B,C$ s'écrivent ainsi
+\[
+ A'=X(r),\qquad B'=X(s),\qquad C'=X(t),
+\]
+avec $r,s,t$ distincts et différents des valeurs qui donnent les points déjà fixés.
+
+\newpage
+\section{Preuve complète par coordonnées}
+Nous allons calculer chacune des intersections et vérifier qu'elles satisfont une même équation linéaire. C'est la définition analytique de l'alignement.
+
+\subsection{Équations des six droites}
+Deux points $U,V$ définissent la droite représentée par $U\times V$. En appliquant ce produit vectoriel, on obtient :
+\begin{align*}
+ AB' &: sy+z=0, & A'B &: (1-r)x+z=0,\\
+ BC' &: (1-t)x+z=0, & B'C &: (s-1)x+sy=0,\\
+ CA' &: (r-1)x+ry=0, & C'A &: ty+z=0.
+\end{align*}
+Par exemple, $A=[1:0:0]$ et $B'=[s:1-s:s(s-1)]$ donnent $AB': sy+z=0$ après simplification d'un facteur non nul.
+
+\subsection{Les trois points de Pascal}
+Les intersections des paires de côtés sont les produits vectoriels des triplets de droites précédents :
+\[
+ P=[s:1-r:s(r-1)],\qquad
+ Q=[s:1-s:s(t-1)],\qquad
+ R=[r:1-r:t(r-1)].
+\]
+Il reste à établir que ces trois points sont collinéaires. La droite $PR$ se calcule comme $P\times R$. Avant simplification, ses coefficients sont proportionnels à
+\[
+ \bigl((1-r)^2(s-t),\;s(1-r)(t-r),\;(1-r)(s-r)\bigr).
+\]
+Puisque $r\ne1$, on peut diviser par $1-r$. Une équation de $PR$ est donc
+\begin{equation}\label{eq:pascal-line}
+ (1-r)(s-t)x+s(t-r)y+(s-r)z=0.
+\end{equation}
+Substituons les coordonnées de $Q$. Le membre de gauche vaut
+\[
+ s\bigl((1-r)(s-t)+(t-r)(1-s)+(s-r)(t-1)\bigr).
+\]
+En développant les trois parenthèses, les termes se compensent exactement :
+\begin{align*}
+ &(s-t-rs+rt)+(t-r-st+rs)+(st-s-rt+r)=0.
+\end{align*}
+Ainsi $Q$ appartient à la droite $PR$, ce qui prouve l'alignement de $P,Q,R$. La réduction projective utilisée au départ montre que le résultat vaut pour toute conique non dégénérée.\finpreuve
+
+\idee{La partie décisive de la preuve n'est pas un calcul compliqué : c'est d'avoir choisi des coordonnées où trois sommets sont fixes et où chaque point restant est décrit par un seul paramètre. La projectivité conserve ensuite exactement la conclusion recherchée.}
+
+\newpage
+\section{Un exemple numérique vérifiable à la main}
+Une autre paramétrisation simple de la conique $xz=y^2$ est
+\[
+ P(u)=[1:u:u^2].
+\]
+La droite joignant $P(u)$ à $P(v)$ a pour équation
+\[
+ uvx-(u+v)y+z=0,
+\]
+car les deux points la satisfont. Prenons six paramètres $0,1,2,3,4,5$ et notons $P_j=P(j)$. Les trois paires de côtés opposés seront $P_0P_1$ et $P_3P_4$, $P_1P_2$ et $P_4P_5$, $P_2P_3$ et $P_5P_0$.
+
+Le calcul des produits vectoriels donne, à un facteur près,
+\[
+ X=[1:2:2],\qquad Y=[1:3:7],\qquad Z=[0:1:5].
+\]
+La droite $XZ$ est donnée par le produit vectoriel $X\times Z=[8:-5:1]$, donc son équation est
+\[
+ 8x-5y+z=0.
+\]
+Le point $Y$ la vérifie : $8-15+7=0$. Les trois intersections sont bien alignées. Cet exemple illustre aussi le point à l'infini : $Z=[0:1:5]$ est fini dans cette carte, tandis que d'autres choix de paramètres peuvent donner une coordonnée $z=0$.
+
+\subsection{Erreurs fréquentes}
+\begin{itemize}
+ \item Oublier que les côtés doivent parfois être prolongés. L'intersection est projective, pas seulement un croisement visible du dessin.
+ \item Confondre la droite de Pascal avec un côté de l'hexagone. Elle dépend des six points et des trois paires opposées.
+ \item Employer des coordonnées affines sans vérifier les cas parallèles. Les coordonnées homogènes évitent cette difficulté.
+ \item Croire que la propriété exige un cercle. Une transformation projective envoie une conique quelconque sur une forme standard, sans préserver les longueurs.
+\end{itemize}
+
+\newpage
+\section{Ce que le théorème permet de construire}
+Une fois cinq points d'une conique et un sixième point choisis, Pascal fournit une relation d'incidence entre les intersections de trois paires de côtés. Cette relation sert à construire de nouveaux points de la conique, à retrouver la droite déterminée par une configuration et à démontrer des résultats plus avancés de géométrie projective.
+
+\subsection{Le rôle de la dualité}
+Dans le plan projectif, les notions de point et de droite sont échangées par le principe de dualité. La forme duale du théorème de Pascal est le théorème de Brianchon : pour un hexagone circonscrit à une conique, les trois diagonales joignant les sommets opposés sont concourantes. La dualité ne transforme pas une longueur en une autre ; elle transforme une assertion d'incidence en une autre assertion d'incidence.
+
+\subsection{Variantes dégénérées}
+Lorsque deux sommets se rapprochent, le côté qui les joint tend vers la tangente à la conique. En faisant tendre des points les uns vers les autres, on obtient des formes dégénérées du théorème, utiles pour étudier les tangentes et les coniques. Ces limites doivent être formulées avec soin : deux points égaux ne définissent plus une corde ordinaire, mais une tangente limite.
+
+\subsection{Questions de révision}
+\begin{enumerate}
+ \item Pourquoi l'alignement est-il conservé par une transformation projective ?
+ \item Vérifiez que $P(u)$ satisfait $xz=y^2$.
+ \item Dérivez l'équation de la droite $P(u)P(v)$ par un déterminant $3\times3$.
+ \item Recalculez les trois intersections de l'exemple avec les produits vectoriels.
+ \item Énoncez le théorème de Brianchon et expliquez en quoi il est dual de Pascal.
+\end{enumerate}
+
+\section*{Références}
+\begin{enumerate}
+ \sourceweb{Wilson Stothers, University of Glasgow, ``Proof of Pascal's Theorem''}{https://www.maths.gla.ac.uk/wws/cabripages/klein/pascalproof.html}
+ \sourceweb{Marian Palej, ``A Simple Proof for the Theorems of Pascal and Pappus'', Journal for Geometry and Graphics, 1(1), 1997}{https://www.heldermann-verlag.de/jgg/jgg01_05/jgg0101.pdf}
+\end{enumerate}
+\end{document}

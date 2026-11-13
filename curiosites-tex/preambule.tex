@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.25cm,headheight=15pt,footskip=28pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,intersections,angles,quotes,patterns,positioning,decorations.pathreplacing}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\definecolor{Forest}{HTML}{1D5B4A}
+\definecolor{Ink}{HTML}{16211D}
+\definecolor{Mist}{HTML}{EAF0EC}
+\definecolor{Muted}{HTML}{5B6862}
+\hypersetup{colorlinks=true,linkcolor=Forest,urlcolor=Forest,citecolor=Forest,pdftitle={Curiosité mathématique},pdfauthor={Germain-Junior TWAMBA}}
+\urlstyle{same}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.3em}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.2em,topsep=0.3em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{Muted}{Curiosités mathématiques}}
+\fancyhead[R]{\small\textcolor{Muted}{Club des Divergents}}
+\fancyfoot[C]{\small\textcolor{Muted}{\thepage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newtheorem{theoreme}{Théorème}[section]
+\newtheorem{proposition}[theoreme]{Proposition}
+\newtheorem{lemme}[theoreme]{Lemme}
+\theoremstyle{definition}
+\newtheorem{definition}[theoreme]{Définition}
+\newtheorem{exemple}[theoreme]{Exemple}
+\newcommand{\titreDossier}[3]{%
+  \begin{titlepage}\centering\vspace*{1.3cm}
+  {\large\scshape\textcolor{Forest}{Club des Divergents \textbullet{} Goma, RDC}}\\[1.5cm]
+  {\color{Forest}\rule{0.82\textwidth}{1.2pt}}\\[0.8cm]
+  {\Huge\bfseries\sffamily\color{Ink}#1\par}\vspace{0.7cm}
+  {\Large\color{Forest}#2\par}\vspace{1.2cm}
+  {\large\color{Muted}Dossier de curiosité mathématique\par}
+  \vfill
+  \begin{minipage}{0.78\textwidth}\centering\large #3\end{minipage}
+  \vfill
+  {\color{Forest}\rule{0.82\textwidth}{1.2pt}}\\[0.45cm]
+  {\large Germain-Junior TWAMBA\par}
+  {\normalsize 13 novembre 2026\par}
+  \end{titlepage}}
+\newcommand{\sourceweb}[2]{\item \textbf{#1.} \url{#2}}
+\newcommand{\idee}[1]{\begin{quote}\small\colorbox{Mist}{\parbox{0.94\linewidth}{\textbf{Idée à retenir.} #1}}\end{quote}}
+\newcommand{\demonstration}{\par\smallskip\noindent\textbf{Démonstration.}\ }
+\newcommand{\finpreuve}{\hfill$\square$\par}

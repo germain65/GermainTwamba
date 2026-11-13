@@ -1,0 +1,174 @@
+\input{preambule.tex}
+\begin{document}
+\titreDossier{Le modèle de Verhulst}{Croissance limitée et équation logistique}{
+Une équation différentielle explique pourquoi une croissance peut d'abord sembler exponentielle, puis ralentir quand les contraintes deviennent importantes. Ce dossier dérive sa solution, interprète ses paramètres, étudie ses équilibres et montre comment ajuster le modèle sans confondre une courbe avec une loi universelle.}
+
+\section*{De l'exponentielle à la saturation}
+Une population sans limite apparente, dont chaque individu contribue à un taux de croissance constant, est décrite par l'équation de Malthus
+\[
+ P'(t)=rP(t).
+\]
+Sa solution $P(t)=P_0e^{rt}$ augmente sans borne lorsque $r>0$. Pour une population réelle, cette hypothèse cesse souvent d'être crédible : nourriture, espace, compétition, maladies et capacité d'accueil modifient le taux de croissance.
+
+Pierre-François Verhulst introduit au XIXe siècle une loi où le taux de croissance par individu diminue avec la taille de la population. Le modèle continu standard s'écrit
+\begin{equation}\label{eq:logistic}
+ \boxed{\frac{dP}{dt}=rP\left(1-\frac{P}{K}\right)},\qquad r>0,\ K>0.
+\end{equation}
+Ici $P(t)$ est la population au temps $t$, $r$ le taux intrinsèque de croissance, et $K$ la capacité de charge ou niveau de saturation du milieu. L'expression $r(1-P/K)$ est le taux de croissance par individu.
+
+\begin{center}
+\begin{tikzpicture}[x=0.72cm,y=0.0042cm,>=Latex]
+  \draw[->] (0,0)--(14.2,0) node[right] {$t$};
+  \draw[->] (0,0)--(0,1120) node[above] {$P(t)$};
+  \draw[dashed,Forest] (0,1000)--(13.5,1000) node[right] {$K$};
+  \draw[very thick,BrickRed,domain=0:14,samples=120,smooth] plot (\x,{1000/(1+9*exp(-0.4*\x))});
+  \draw[dashed,gray] (5.493,0)--(5.493,500);
+  \fill[Ink] (5.493,500) circle (2pt);
+  \node[above right] at (5.493,500) {point d'inflexion};
+  \node[below] at (5.493,0) {$t_* = \ln 9/0.4$};
+  \node[left] at (0,500) {$K/2$};
+  \node[below left] at (0,0) {$0$};
+\end{tikzpicture}
+\end{center}
+\textit{Exemple illustratif : $P_0=100$, $K=1000$, $r=0.4$. La croissance ralentit à mesure que la population se rapproche de $K$.}
+
+\section{Pourquoi le taux devient-il limité ?}
+Dans (\ref{eq:logistic}), le facteur $P$ signifie que la croissance totale est proportionnelle à la taille actuelle de la population. Le second facteur, $1-P/K$, introduit la limitation :
+\begin{itemize}
+ \item si $0<P<K$, alors $P'>0$ : la population augmente ;
+ \item si $P=K$, alors $P'=0$ : l'état est stationnaire ;
+ \item si $P>K$, alors $P'<0$ : le modèle prédit une diminution ;
+ \item si $P$ est très petit devant $K$, alors $1-P/K\approx1$ et l'équation ressemble à $P'=rP$.
+\end{itemize}
+La limite n'est pas un mur matériel. $K$ est un paramètre du modèle qui résume des contraintes supposées constantes pendant la période étudiée.
+
+\newpage
+\section{Résoudre l'équation pas à pas}
+Supposons $P_0=P(0)>0$. On sépare les variables dans (\ref{eq:logistic}) :
+\[
+ \frac{dP}{P(1-P/K)}=r\,dt.
+\]
+La décomposition en fractions simples est
+\[
+ \frac{1}{P(1-P/K)}=\frac1P+\frac1{K-P}.
+\]
+En intégrant,
+\[
+ \ln P-\ln(K-P)=rt+C,
+\]
+soit $\ln\bigl(P/(K-P)\bigr)=rt+C$. L'exponentielle donne
+\[
+ \frac{P}{K-P}=Ae^{rt}.
+\]
+On isole $P$ : $P=AKe^{rt}/(1+Ae^{rt})$. La condition initiale $P(0)=P_0$ impose $A=P_0/(K-P_0)$ lorsque $P_0\ne K$. Une forme valable et plus lisible est
+\begin{equation}\label{eq:solution}
+ \boxed{P(t)=\frac{K}{1+\left(\frac{K-P_0}{P_0}\right)e^{-rt}}}.
+\end{equation}
+On vérifie immédiatement que $P(0)=P_0$. En dérivant (\ref{eq:solution}), on retrouve $P'=rP(1-P/K)$, ce qui confirme la solution.
+
+Si $P_0=K$, la solution est constante $P(t)=K$. Si $P_0=0$, elle est également constante $P(t)=0$. Pour $0<P_0<K$, la solution croît vers $K$. Pour $P_0>K$, elle décroît vers $K$ tant que le modèle est considéré pour des populations positives.
+
+\subsection{Une transformation qui linéarise le modèle}
+Posons $Y=P/(K-P)$. En dérivant et en utilisant l'équation logistique, on obtient $Y'=rY$. Donc $Y(t)=Y(0)e^{rt}$. La croissance logistique devient une croissance exponentielle de la cote $P/(K-P)$. Cette transformation explique le rôle des logarithmes et fournit aussi une méthode pratique d'estimation :
+\[
+ \ln\left(\frac{P(t)}{K-P(t)}\right)=rt+\ln\left(\frac{P_0}{K-P_0}\right).
+\]
+Pour une valeur de $K$ connue, le logarithme de la cote est une fonction affine du temps.
+
+\newpage
+\section{Équilibres et forme en S}
+Les équilibres satisfont $P'=0$, donc $P=0$ ou $P=K$. Le signe de $P'$ est donné par $P(1-P/K)$ : positif entre les deux équilibres et négatif au-dessus de $K$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.8cm,y=1cm,>=Latex]
+  \draw[->,thick] (-0.4,0)--(10.2,0) node[right] {$P$};
+  \draw[thick] (1,0.12)--(1,-0.12) node[below=5pt] {$0$};
+  \draw[thick] (7,0.12)--(7,-0.12) node[below=5pt] {$K$};
+  \draw[->,very thick,Forest] (1.5,0.45)--(6.3,0.45) node[midway,above] {$P'>0$};
+  \draw[->,very thick,BrickRed] (9.4,0.45)--(7.7,0.45) node[midway,above] {$P'<0$};
+  \fill[Forest] (1,0) circle (2.5pt); \fill[Forest] (7,0) circle (2.5pt);
+  \node[align=center] at (1,-0.85) {$P=0$\\\small équilibre};
+  \node[align=center] at (7,-0.85) {$P=K$\\\small équilibre stable};
+\end{tikzpicture}
+\end{center}
+
+Pour $0<P_0<K$, la pente augmente d'abord, atteint un maximum puis diminue. En dérivant une seconde fois,
+\[
+ P''=rP'\left(1-\frac{2P}{K}\right).
+\]
+Au point d'inflexion non stationnaire, $P''=0$ et donc $P=K/2$. En remplaçant dans (\ref{eq:solution}), on trouve
+\[
+ t_* = \frac1r\ln\left(\frac{K-P_0}{P_0}\right),
+\]
+si $0<P_0<K$. La pente maximale vaut
+\[
+ P'(t_*)=r\frac K2\left(1-\frac12\right)=\frac{rK}{4}.
+\]
+Ce point est une propriété mathématique du modèle, pas nécessairement un événement directement visible dans les données.
+
+\subsection{Lecture qualitative}
+La solution a une forme en S lorsque $P_0$ est en dessous de $K$. Au début, la croissance est presque exponentielle ; au milieu, le rythme absolu est maximal ; ensuite, le système se rapproche de l'équilibre et la pente tend vers zéro. La forme en S ne suffit pas à prouver que le modèle logistique est adapté : plusieurs mécanismes peuvent produire une courbe similaire.
+
+\newpage
+\section{Interpréter les paramètres avec un exemple}
+Considérons une population mesurée dans une unité quelconque, avec $P_0=100$, $K=1000$ et $r=0.4$ par unité de temps. La solution est
+\[
+ P(t)=\frac{1000}{1+9e^{-0.4t}}.
+\]
+À $t=0$, on retrouve $100$. Le point d'inflexion survient à
+\[
+ t_* = \frac{\ln 9}{0.4}\approx5.49,
+\]
+et la population y vaut $500$. La pente maximale vaut $rK/4=100$ unités par unité de temps. À $t=5$, $P(5)\approx451$ ; la population augmente encore, mais le taux relatif diminue parce que $P/K$ devient plus important.
+
+Le paramètre $r$ a l'unité inverse du temps. Si le temps est mesuré en années, $r=0.4$ signifie que le taux initial par individu est de l'ordre de $0.4$ par année lorsque $P$ est très faible devant $K$. Le paramètre $K$ a la même unité que la population. Il ne doit pas être confondu avec un taux.
+
+\subsection{Ajuster $r$ et $K$}
+Avec plusieurs mesures, une approche consiste à choisir $r,K$ en minimisant l'écart entre les observations et la courbe prédite. Si des observations sont prises à intervalles égaux et que le modèle est exact, la transformation $K/P-1$ décroît géométriquement. Pour trois observations $P_0,P_1,P_2$ séparées d'un même intervalle, on peut dériver
+\[
+ \left(\frac K{P_1}-1\right)^2=
+ \left(\frac K{P_0}-1\right)\left(\frac K{P_2}-1\right).
+\]
+Lorsque le dénominateur est non nul, cela fournit
+\begin{equation}\label{eq:Kfit}
+ K=P_1\,\frac{P_0P_1+P_1P_2-2P_0P_2}{P_1^2-P_0P_2}.
+\end{equation}
+Une fois $K$ estimé, la relation transformée donne
+\[
+ r=\frac1T\ln\left(\frac{K/P_0-1}{K/P_1-1}\right),
+\]
+où $T$ est le temps entre les deux premières observations. En pratique, cette estimation à trois points est sensible au bruit ; une régression sur toutes les données est généralement préférable.
+
+\newpage
+\section{Hypothèses, limites et confusions à éviter}
+Le modèle suppose une seule variable de population, un taux intrinsèque constant et une capacité de charge constante. Il néglige la structure par âge, les saisons, les délais de reproduction, les migrations, les interactions entre espèces et les changements environnementaux. Si $K$ varie dans le temps, si les ressources fluctuent ou si la dynamique présente des retards, une courbe logistique simple peut mal décrire les observations.
+
+Les paramètres ajustés ne sont pas automatiquement des constantes naturelles. $K$ dépend de l'échelle choisie, de la période observée et du système étudié. Une extrapolation à long terme à partir d'une courte série doit donc être traitée avec prudence. Il faut examiner les résidus, comparer d'autres modèles, et signaler l'incertitude sur les paramètres.
+
+\subsection{Continu n'est pas discret}
+L'équation différentielle (\ref{eq:logistic}) décrit une évolution en temps continu. La récurrence
+\[
+ x_{n+1}=\lambda x_n(1-x_n)
+\]
+est une équation logistique discrète, souvent appelée application logistique. Elle a des comportements propres aux systèmes discrets, pouvant inclure des oscillations et du chaos selon $\lambda$. Ce n'est pas simplement la même formule écrite avec un indice $n$ : les solutions et les interprétations diffèrent.
+
+\subsection{Verhulst et l'histoire de l'équation}
+Verhulst publia une première proposition sur l'accroissement de la population en 1838, puis reprit le sujet dans plusieurs mémoires. Les notations et les versions historiques ne coïncident pas toujours avec l'équation standard enseignée aujourd'hui. Il est donc préférable de distinguer l'histoire des formulations proposées par Verhulst de la forme canonique moderne utilisée dans ce dossier.
+
+\section*{Résumé}
+\begin{itemize}
+ \item Équation : $P'=rP(1-P/K)$.
+ \item Équilibres : $0$ et $K$ ; $K$ attire les solutions positives.
+ \item Solution : $P(t)=K/[1+((K-P_0)/P_0)e^{-rt}]$.
+ \item Point d'inflexion : $P=K/2$, pente maximale $rK/4$.
+ \item La qualité d'un ajustement dépend des données et des hypothèses, pas seulement de la forme en S.
+\end{itemize}
+
+\section*{Références}
+\begin{enumerate}
+ \sourceweb{P.-F. Verhulst, ``Notice sur la loi que la population suit dans son accroissement'', 1838, pp. 113-121, reproduction numérisée}{https://www.neo-classical-physics.info/uploads/3/4/3/6/34363841/verhulst_-_law_of_population.pdf}
+ \sourceweb{François Bacaër, ``Verhulst et la loi logistique'', texte historique et données démographiques}{https://ummisco.pages.ird.fr/france/bacaer/Verhulst.html}
+ \sourceweb{University of Utah, ``Exponential Modeling'', solution et analyse du modèle de Verhulst}{https://www.math.utah.edu/~gustafso/debook/deBookAndSolutionsGG.pdf}
+ \sourceweb{Académie royale de Belgique, notice bibliographique du mémoire de Verhulst}{https://academieroyale.be/fr/publications-academie-toutes-publications-detail/oeuvres-2/deuxieme-memoire-sur-la-loi-daccroissement-de-la-population/}
+\end{enumerate}
+\end{document}
