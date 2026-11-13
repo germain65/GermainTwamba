@@ -161,7 +161,7 @@ export default async function BookPage({ params }: P) {
                   <dt className="border-b border-rule py-2 text-mute">{k}</dt>
                   <dd className="break-words border-b border-rule py-2">
                     {(k === 'DOI' || k === 'DOI toutes versions') ? (
-                      <a href={`https://doi.org/${v}`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-accent">{v} &nearr;</a>
+                      <a href={`https://doi.org/${v}`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-accent">{v} ↗</a>
                     ) : v}
                   </dd>
                 </div>

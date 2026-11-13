@@ -59,7 +59,7 @@ export default function ProjectsPage() {
             <div className="mt-6 flex flex-wrap gap-4 pt-4 border-t border-rule text-sm">
               {p.link && (p.link.startsWith('http') ? (
                 <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline underline-offset-4">
-                  {p.sourceLabel ?? 'Accéder au projet'} &nearr;
+                  {p.sourceLabel ?? 'Accéder au projet'} ↗
                 </a>
               ) : (
                 <Link href={p.link} className="inline-flex items-center gap-1.5 font-medium text-accent hover:underline underline-offset-4">
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 font-medium underline hover:text-accent underline-offset-4"
                 >
-                  {p.externalLabel ?? 'Consulter la source'} &nearr;
+                  {p.externalLabel ?? 'Consulter la source'} ↗
                 </a>
               )}
             </div>

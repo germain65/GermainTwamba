@@ -66,12 +66,12 @@ export default function PublicationsPage() {
               {p.citation && <p className="max-w-2xl pt-1 text-sm leading-relaxed text-ink/80">{p.citation}</p>}
               {p.externalHref && (
                 <a href={p.externalHref} target="_blank" rel="noopener noreferrer" className="inline-flex pt-1 text-sm font-medium text-accent underline underline-offset-4 hover:text-ink">
-                  {p.title === 'Exercices d’algèbre' ? 'Voir la fiche MonBestSeller' : 'Consulter la notice Zenodo'} &nearr;
+                  {p.title === 'Exercices d’algèbre' ? 'Voir la fiche MonBestSeller' : 'Consulter la notice Zenodo'} ↗
                 </a>
               )}
               {p.title === 'Exercices d’algèbre' && (
                 <a href="https://fr.scribd.com/document/896306264/alg-5" target="_blank" rel="noopener noreferrer" className="inline-flex pt-1 text-sm font-medium text-accent underline underline-offset-4 hover:text-ink">
-                  Voir le document sur Scribd &nearr;
+                  Voir le document sur Scribd ↗
                 </a>
               )}
             </div>

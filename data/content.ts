@@ -93,22 +93,6 @@ export const projects: Project[] = [
     sourceLabel: 'Voir la collection',
   },
   {
-    title: 'Allons-y — transport à la demande',
-    description:
-      'Application de transport à la demande pensée pour Goma et Bukavu, en République démocratique du Congo. Le dépôt public est décrit comme une application de ride-hailing.',
-    tech: ['JavaScript', 'Mobilité', 'Goma', 'Bukavu'],
-    externalHref: 'https://github.com/germain65/allons-y',
-    externalLabel: 'Code source GitHub',
-  },
-  {
-    title: 'Afrilearn — apprentissage des langues africaines',
-    description:
-      'Site d’apprentissage de langues africaines. Le dépôt public donne accès au code du projet.',
-    tech: ['HTML', 'Langues', 'Apprentissage'],
-    externalHref: 'https://github.com/germain65/afrilearn',
-    externalLabel: 'Code source GitHub',
-  },
-  {
     title: 'Bibliothèque numérique Germain-Junior TWAMBA',
     description:
       'Le site officiel rassemble les ouvrages mathématiques, leurs fiches bibliographiques et leurs aperçus. Son code source et son historique sont consultables dans le dépôt du site.',

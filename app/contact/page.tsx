@@ -66,7 +66,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:text-accent hover:underline"
                 >
-                  LinkedIn &mdash; Germain-Junior Twamba &nearr;
+                  LinkedIn &mdash; Germain-Junior Twamba ↗
                 </a>
               </p>
               <p className="mt-1 text-xs text-mute">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:text-accent hover:underline"
                 >
-                  GitHub &mdash; @germain65 &nearr;
+                  GitHub &mdash; @germain65 ↗
                 </a>
               </p>
               <p className="mt-1 text-xs text-mute">
