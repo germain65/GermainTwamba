@@ -48,12 +48,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Nouveau portrait officiel de Germain */}
+        {/* Photo d'accueil de Germain-Junior TWAMBA */}
         <div className="relative mx-auto w-full max-w-sm md:max-w-none">
           <div className="relative overflow-hidden border-2 border-ink bg-tint shadow-xl">
             <img
-              src={asset('/photos/germain-portrait.jpg')}
-              alt="Germain-Junior TWAMBA"
+              src={asset('/photos/germain-accueil.jpg')}
+              alt="Germain-Junior TWAMBA devant un panorama urbain et des ruines antiques"
               className="aspect-[4/5] w-full object-cover object-top"
             />
             <div className="border-t border-ink bg-paper p-3 text-center">
