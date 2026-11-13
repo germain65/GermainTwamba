@@ -10,13 +10,13 @@ export const site = {
   tagline: 'Bibliothèque numérique & recueils d’ouvrages libres',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? `https://germain65.github.io${BASE_PATH}`,
   basePath: BASE_PATH,
-  email: 'junior.twambasengi@student.uclouvain.be',
+  email: 'amandotwamba@gmail.com',
   institution: 'École polytechnique de Louvain (UCLouvain)',
   initiative: 'Club des Divergents — Goma (RDC)',
   links: [
     { label: 'GitHub',   href: 'https://github.com/germain65' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/germain-junior-twamba-697519338/' },
-    { label: 'Email',    href: 'mailto:junior.twambasengi@student.uclouvain.be' },
+    { label: 'Email',    href: 'mailto:amandotwamba@gmail.com' },
   ],
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? '',
 };

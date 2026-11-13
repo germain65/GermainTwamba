@@ -61,7 +61,7 @@ export default function Home() {
                 Germain-Junior TWAMBA
               </span>
               <span className="block text-xs text-mute">
-                Auteur &middot; Fondateur du Club des Divergents &middot; UCLouvain
+                Auteur &amp; étudiant ingénieur
               </span>
             </div>
           </div>

@@ -94,9 +94,9 @@ export default function About() {
               className="inline-flex min-h-10 items-center gap-2 border border-rule px-4 hover:bg-tint">
               LinkedIn &mdash; Germain-Junior Twamba
             </a>
-            <a href="mailto:junior.twambasengi@student.uclouvain.be"
+            <a href="mailto:amandotwamba@gmail.com"
               className="inline-flex min-h-10 items-center gap-2 border border-rule px-4 hover:bg-tint">
-              junior.twambasengi@student.uclouvain.be
+              amandotwamba@gmail.com
             </a>
           </div>
         </div>
