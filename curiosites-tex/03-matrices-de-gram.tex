@@ -55,7 +55,6 @@ Ainsi $G$ est positive semi-définie.
 \]
 Une norme au carré ne peut être négative.\finpreuve
 
-\newpage
 \section{Positivité stricte, rang et dépendance}
 \begin{theoreme}
 La matrice de Gram $G$ est définie positive si et seulement si les vecteurs $v_1,\ldots,v_m$ sont linéairement indépendants.
@@ -72,9 +71,9 @@ Par conséquent, $Gc=0$ si et seulement si $Vc=0$ : le noyau de $G$ décrit exac
  \operatorname{rang}(G)=\dim\operatorname{Vect}(v_1,\ldots,v_m).
 \]
 
-Pour une famille de $m$ vecteurs, $\det G>0$ exactement lorsque les vecteurs sont indépendants ; si elle est dépendante, $\det G=0$. Toute matrice de Gram est semi-définie positive, mais une matrice symétrique positive quelconque n'est-elle pas toujours une matrice de Gram ? Oui : sa décomposition spectrale ou une factorisation de Cholesky fournit des vecteurs dont les produits scalaires sont les coefficients. Cette remarque relie le problème de représentation géométrique à l'algèbre linéaire.
+Pour une famille de $m$ vecteurs, $\det G>0$ exactement lorsque les vecteurs sont indépendants ; si elle est dépendante, $\det G=0$. Toute matrice de Gram est symétrique et semi-définie positive. Réciproquement, toute matrice symétrique semi-définie positive $S$ est une matrice de Gram. Le théorème spectral donne $S=Q\Lambda Q^T$ avec $Q$ orthogonale et $\Lambda$ diagonale à coefficients $\geq0$ ; la matrice $V=\Lambda^{1/2}Q^T$ vérifie $V^TV=S$, et ses colonnes sont des vecteurs dont les produits scalaires sont les coefficients de $S$. Cette remarque relie le problème de représentation géométrique à l'algèbre linéaire.
 
-\subsection{Cauchy-Schwarz depuis une matrice $2\times2$}
+\subsection{Cauchy-Schwarz depuis une matrice \texorpdfstring{$2\times2$}{2x2}}
 Pour deux vecteurs, posons $a=\|u\|^2$, $b=\langle u,v\rangle$, $c=\|v\|^2$. La positivité de
 \[
  G=\begin{pmatrix}a&b\\b&c\end{pmatrix}
@@ -83,9 +82,8 @@ impose $\det G=ac-b^2\geq0$. Donc
 \[
  |\langle u,v\rangle|\leq\|u\|\,\|v\|.
 \]
-L'égalité signifie que $\det G=0$, c'est-à-dire que $u$ et $v$ sont dépendants (en supposant qu'ils ne soient pas tous deux nuls). L'inégalité de Cauchy-Schwarz est donc une conséquence directe de la positivité du Gram.
+L'égalité a lieu exactement lorsque $\det G=0$, c'est-à-dire lorsque $u$ et $v$ sont liés. L'inégalité de Cauchy-Schwarz est donc une conséquence directe de la positivité du Gram.
 
-\newpage
 \section{Le déterminant de Gram mesure un volume}
 \begin{theoreme}[Formule du volume]
 Si $v_1,\ldots,v_m$ sont des vecteurs d'un espace euclidien et si $G$ est leur matrice de Gram, le volume $m$-dimensionnel du parallélotope qu'ils engendrent est
@@ -94,7 +92,7 @@ Si $v_1,\ldots,v_m$ sont des vecteurs d'un espace euclidien et si $G$ est leur m
 \]
 \end{theoreme}
 
-\demonstration Supposons d'abord les vecteurs indépendants et plaçons-les dans les colonnes d'une matrice $V$ dans une base orthonormée de leur sous-espace. Le volume du parallélotope est $|\det V|$. Or $G=V^TV$, donc
+\demonstration Supposons d'abord les vecteurs indépendants et plaçons leurs coordonnées, dans une base orthonormée de leur sous-espace (de dimension $m$), dans les colonnes d'une matrice carrée $V$. Le volume du parallélotope est $|\det V|$. Or $G=V^TV$, donc
 \[
  \det G=\det(V^T)\det(V)=(\det V)^2.
 \]
@@ -110,7 +108,6 @@ Si $\|u\|=a$, $\|v\|=b$ et l'angle entre eux vaut $\theta$, alors
 \]
 Ainsi l'aire vaut $ab|\sin\theta|$. Deux vecteurs presque parallèles donnent un déterminant petit ; s'ils sont exactement parallèles, l'aire et le déterminant sont nuls.
 
-\newpage
 \section{Exemples calculés}
 \subsection{Un parallélogramme}
 Prenons dans $\mathbb R^2$ les vecteurs $u=(2,0)$ et $v=(1,3)$. Leurs produits scalaires sont
@@ -135,12 +132,15 @@ Chaque vecteur a une norme au carré égale à $2$, et chaque produit scalaire e
 Un calcul direct donne $\det G=4$. Le volume du parallélépipède est donc $2$. La matrice n'est pas diagonale, ce qui signifie que les vecteurs ne sont pas orthogonaux ; pourtant son déterminant donne exactement le volume sans construire d'altitude.
 
 \subsection{Une famille dépendante}
-Si $w=u+v$, alors la famille $(u,v,w)$ est liée. La matrice de Gram est singulière puisque le coefficient $(1,1,-1)$ décrit une combinaison nulle. Le volume tridimensionnel est nul : les trois vecteurs restent dans le plan engendré par $u$ et $v$.
+Reprenons $u=(1,1,0)$, $v=(0,1,1)$ et posons cette fois $w=u+v=(1,2,1)$. La famille $(u,v,w)$ est liée et
+\[
+ G=\begin{pmatrix}2&1&3\\1&2&3\\3&3&6\end{pmatrix},\qquad \det G=0.
+\]
+Le vecteur $c=(1,1,-1)^T$ décrit la relation $u+v-w=0$ et vérifie bien $Gc=0$. Le volume tridimensionnel est nul : les trois vecteurs restent dans le plan engendré par $u$ et $v$.
 
-\newpage
 \section{Applications et connexions}
 \subsection{Projection et moindres carrés}
-Soient les colonnes de $V$ une famille indépendante. Pour approximer un vecteur $b$ par $Vc$, on minimise $\|Vc-b\|^2$. En développant puis en annulant le gradient, on obtient les équations normales
+Soit $V$ une matrice dont les colonnes forment une famille indépendante. Pour approcher un vecteur $b$ par $Vc$, on minimise $\|Vc-b\|^2$. Le gradient vaut $2V^T(Vc-b)$ ; en l'annulant, on obtient les équations normales
 \[
  V^TVc=V^Tb,
 \]
@@ -154,7 +154,7 @@ La distance entre deux vecteurs se récupère par
 Un tableau de produits scalaires suffit ainsi à retrouver toutes les distances entre les vecteurs d'une famille. C'est pourquoi les Gram apparaissent en géométrie, en approximation numérique, en statistiques et dans les méthodes à noyau.
 
 \subsection{Lien avec Gram-Schmidt et Cholesky}
-Le procédé de Gram-Schmidt remplace une famille indépendante par une famille orthogonale ayant le même sous-espace engendré. Après ce changement triangulaire, le déterminant de Gram devient le produit des carrés des normes des vecteurs orthogonaux. De manière algébrique, une matrice définie positive admet une factorisation de Cholesky $G=R^TR$. Les colonnes de $R$ fournissent une réalisation concrète de la géométrie codée par $G$.
+Le procédé de Gram-Schmidt remplace une famille indépendante par une famille orthogonale ayant le même sous-espace engendré. Après ce changement triangulaire, le déterminant de Gram devient le produit des carrés des normes des vecteurs orthogonaux. Sur le plan algébrique, une matrice définie positive admet une factorisation de Cholesky $G=R^TR$ avec $R$ triangulaire supérieure. Les colonnes de $R$ fournissent une réalisation concrète, triangulaire, de la géométrie codée par $G$.
 
 \section*{À retenir et exercices}
 \begin{itemize}
@@ -167,12 +167,20 @@ Le procédé de Gram-Schmidt remplace une famille indépendante par une famille 
  \item Construisez la matrice de Gram de $(1,0,1)$ et $(1,1,0)$ dans $\mathbb R^3$ et calculez leur aire.
  \item Montrez que si deux vecteurs sont orthogonaux, leur matrice de Gram est diagonale.
  \item Expliquez pourquoi ajouter un vecteur déjà dans l'espace engendré ne peut pas augmenter le rang du Gram.
+ \item Montrez que $\det G\leq\prod_i\|v_i\|^2$ (inégalité de Hadamard) et vérifiez-la sur l'exemple à trois vecteurs.
+\end{enumerate}
+\textbf{Réponses.}
+\begin{enumerate}
+ \item $G=\begin{pmatrix}2&1\\1&2\end{pmatrix}$, $\det G=3$, aire $\sqrt3$.
+ \item Si $\langle u,v\rangle=0$, les coefficients hors diagonale sont nuls : $G=\operatorname{diag}(\|u\|^2,\|v\|^2)$.
+ \item Le rang de $G$ est la dimension de l'espace engendré (section 2) ; un vecteur déjà dans cet espace ne la change pas.
+ \item Le volume du parallélotope est au plus le produit des longueurs des côtés (Gram-Schmidt : chaque vecteur orthogonalisé est plus court que l'original), donc $\det G=\operatorname{Vol}^2\leq\prod\|v_i\|^2$. Pour l'exemple : $4\leq2\cdot2\cdot2=8$.
 \end{enumerate}
 
 \section*{Références}
 \begin{enumerate}
- \sourceweb{University of Minnesota, ``Constructing positive definite or positive semidefinite matrices'', notes de cours}{https://www-users.cse.umn.edu/~rylai/docs1/teaching/math4242/S2021_M4242/Lecture20.pdf}
- \sourceweb{University of Colorado, ``Differential Geometry of Curves and Surfaces'', formule volume-déterminant de Gram}{https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html}
- \sourceweb{Israel Halperin, ``On the Gram Matrix'', Canadian Mathematical Bulletin, 5(3), 1962}{https://doi.org/10.4153/CMB-1962-027-1}
+ \sourceweb{University of Minnesota, \og Constructing positive definite or positive semidefinite matrices\fg{}, notes de cours}{https://www-users.cse.umn.edu/~rylai/docs1/teaching/math4242/S2021_M4242/Lecture20.pdf}
+ \sourceweb{University of Colorado, \og Differential Geometry of Curves and Surfaces\fg{}, formule volume-déterminant de Gram}{https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html}
+ \sourceweb{Israel Halperin, \og On the Gram Matrix\fg{}, Canadian Mathematical Bulletin, 5(3), 1962}{https://doi.org/10.4153/CMB-1962-027-1}
 \end{enumerate}
 \end{document}

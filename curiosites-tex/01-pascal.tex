@@ -22,7 +22,9 @@ Les lettres indiquent un appariement précis des six côtés de l'hexagone crois
 \caption{Une configuration du théorème de Pascal : les intersections des paires de côtés opposés sont alignées. Illustration de .jhc., diffusée dans le domaine public sur Wikimedia Commons ; fond transparent aplati sur blanc pour l'impression. Voir la \href{https://commons.wikimedia.org/wiki/File:Pascal\%27s_theorem.png}{notice de l'image}.}
 \end{figure}
 
-\newpage
+\section{Un mot d'histoire}
+En 1640, à seize ans, Blaise Pascal fait imprimer un court \emph{Essay pour les coniques}, une affiche d'environ 35 sur 43~cm tirée à une cinquantaine d'exemplaires. Il y énonce ce résultat sans le démontrer. Le théorème de Pappus (IVe siècle) en est le cas dégénéré où la conique est formée de deux droites. Le dossier ci-dessous ne suit pas la démonstration de Pascal : il en donne une preuve analytique moderne, entièrement vérifiable.
+
 \section{Le langage projectif nécessaire}
 Un point projectif est une classe de triplets non nuls $(x,y,z)$, notée $[x:y:z]$, où deux triplets représentent le même point lorsqu'ils diffèrent par un facteur non nul. La droite d'équation $ux+vy+wz=0$ est représentée par le triplet de coefficients $[u:v:w]$. L'intersection de deux droites se calcule par produit vectoriel de leurs triplets ; la droite passant par deux points se calcule de la même façon.
 
@@ -31,18 +33,20 @@ Cette écriture traite les points à l'infini sans ajouter de cas particuliers. 
 Une transformation projective est induite par une matrice inversible $3\times3$. Elle envoie droites sur droites et conserve l'incidence, l'alignement et les coniques. Elle ne conserve pas en général les longueurs ni les angles. C'est pourquoi Pascal appartient naturellement à la géométrie projective.
 
 \begin{proposition}[Réduction de la conique]
-Toute conique réelle non dégénérée peut, par un changement projectif de coordonnées, être ramenée à une conique standard. Il suffit donc de prouver le théorème dans une représentation commode : les transformations projectives préserveront la collinearité obtenue.
+Toute conique non dégénérée possédant des points réels est l'image de la conique standard
+\[
+ \mathcal C_0:\ xy+yz+zx=0
+\]
+par une transformation projective.
 \end{proposition}
 
-Pour la preuve qui suit, on choisit
+C'est la classification des coniques (loi d'inertie de Sylvester), que nous admettons : une forme quadratique non dégénérée, qui s'annule en un point réel, a pour signature $(2,1)$ ou $(1,2)$, et la forme $xy+yz+zx$ a la signature $(1,2)$. Comme une transformation projective envoie droites sur droites, elle conserve l'alignement de trois points. Il suffit donc de prouver le théorème pour $\mathcal C_0$.
+
+Les trois points suivants appartiennent à $\mathcal C_0$ :
 \[
- \mathcal C: xy+yz+zx=0.
+ A_0=[1:0:0],\qquad B_0=[0:1:0],\qquad C_0=[0:0:1].
 \]
-Trois points de cette conique sont
-\[
- A=[1:0:0],\qquad B=[0:1:0],\qquad C=[0:0:1].
-\]
-Ils ne sont pas alignés. Un théorème fondamental de la géométrie projective permet de fixer trois points non alignés par un choix de coordonnées ; les trois autres points deviennent des paramètres sur la même conique.
+Un second fait admis : les transformations projectives qui conservent $\mathcal C_0$ agissent sur ses points comme les homographies sur la droite projective, donc on peut envoyer trois points distincts quelconques de $\mathcal C_0$ sur $A_0,B_0,C_0$. Dans la preuve, on suppose ainsi que les trois premiers points de l'énoncé sont $A=A_0$, $B=B_0$, $C=C_0$.
 
 \subsection{Paramétrer la conique}
 Pour tout réel $u$, posons
@@ -53,13 +57,12 @@ La substitution donne
 \[
  u(1-u)+(1-u)u(u-1)+u\,u(u-1)=0,
 \]
-donc $X(u)\in\mathcal C$. De plus, $X(0)=B$, $X(1)=A$ et la valeur restante de la paramétrisation couvre la conique. Les trois points autres que $A,B,C$ s'écrivent ainsi
+donc $X(u)\in\mathcal C_0$. On a $X(1)=A$, $X(0)=B$, et $C$ correspond à $u=\infty$ : en divisant par $u^2$, $X(u)\to[0:0:1]$ quand $u\to\pm\infty$. Réciproquement, tout point $[x:y:z]$ de $\mathcal C_0$ avec $x+y\ne0$ s'écrit $X(u)$ avec $u=x/(x+y)$ (on normalise $x+y=1$, et l'équation donne $z=-xy$) ; si $x+y=0$, l'équation force $x=y=0$ et le point est $C$. Les trois autres points s'écrivent donc
 \[
  A'=X(r),\qquad B'=X(s),\qquad C'=X(t),
 \]
-avec $r,s,t$ distincts et différents des valeurs qui donnent les points déjà fixés.
+avec $r,s,t$ réels, distincts entre eux et différents de $0$ et $1$.
 
-\newpage
 \section{Preuve complète par coordonnées}
 Nous allons calculer chacune des intersections et vérifier qu'elles satisfont une même équation linéaire. C'est la définition analytique de l'alignement.
 
@@ -95,23 +98,27 @@ En développant les trois parenthèses, les termes se compensent exactement :
 \begin{align*}
  &(s-t-rs+rt)+(t-r-st+rs)+(st-s-rt+r)=0.
 \end{align*}
-Ainsi $Q$ appartient à la droite $PR$, ce qui prouve l'alignement de $P,Q,R$. La réduction projective utilisée au départ montre que le résultat vaut pour toute conique non dégénérée.\finpreuve
+Ainsi $Q$ appartient à la droite $PR$, ce qui prouve l'alignement de $P,Q,R$ pour $\mathcal C_0$ (si $P=R$, l'alignement est trivial). La proposition de réduction étend le résultat à toute conique non dégénérée.\finpreuve
 
 \idee{La partie décisive de la preuve n'est pas un calcul compliqué : c'est d'avoir choisi des coordonnées où trois sommets sont fixes et où chaque point restant est décrit par un seul paramètre. La projectivité conserve ensuite exactement la conclusion recherchée.}
 
-\newpage
 \section{Un exemple numérique vérifiable à la main}
 Une autre paramétrisation simple de la conique $xz=y^2$ est
 \[
- P(u)=[1:u:u^2].
+ M(u)=[1:u:u^2].
 \]
-La droite joignant $P(u)$ à $P(v)$ a pour équation
+La droite joignant $M(u)$ à $M(v)$ a pour équation
 \[
  uvx-(u+v)y+z=0,
 \]
-car les deux points la satisfont. Prenons six paramètres $0,1,2,3,4,5$ et notons $P_j=P(j)$. Les trois paires de côtés opposés seront $P_0P_1$ et $P_3P_4$, $P_1P_2$ et $P_4P_5$, $P_2P_3$ et $P_5P_0$.
-
-Le calcul des produits vectoriels donne, à un facteur près,
+car les deux points la satisfont. Prenons six paramètres $0,1,2,3,4,5$ et notons $M_j=M(j)$. Les trois paires de côtés opposés de l'hexagone $M_0M_1\cdots M_5$ sont $M_0M_1$ et $M_3M_4$, $M_1M_2$ et $M_4M_5$, $M_2M_3$ et $M_5M_0$. La formule précédente donne les six droites
+\[
+ \begin{array}{lll}
+ M_0M_1:\ -y+z=0, & M_1M_2:\ 2x-3y+z=0, & M_2M_3:\ 6x-5y+z=0,\\
+ M_3M_4:\ 12x-7y+z=0, & M_4M_5:\ 20x-9y+z=0, & M_5M_0:\ -5y+z=0.
+ \end{array}
+\]
+Les produits vectoriels de ces triplets donnent, à un facteur près,
 \[
  X=[1:2:2],\qquad Y=[1:3:7],\qquad Z=[0:1:5].
 \]
@@ -119,7 +126,7 @@ La droite $XZ$ est donnée par le produit vectoriel $X\times Z=[8:-5:1]$, donc s
 \[
  8x-5y+z=0.
 \]
-Le point $Y$ la vérifie : $8-15+7=0$. Les trois intersections sont bien alignées. Cet exemple illustre aussi le point à l'infini : $Z=[0:1:5]$ est fini dans cette carte, tandis que d'autres choix de paramètres peuvent donner une coordonnée $z=0$.
+Le point $Y$ la vérifie : $8-15+7=0$. Les trois intersections sont bien alignées. Ici aucune intersection n'est à l'infini ; avec d'autres paramètres, un des points pourrait avoir $z=0$ et le calcul resterait identique.
 
 \subsection{Erreurs fréquentes}
 \begin{itemize}
@@ -129,9 +136,8 @@ Le point $Y$ la vérifie : $8-15+7=0$. Les trois intersections sont bien aligné
  \item Croire que la propriété exige un cercle. Une transformation projective envoie une conique quelconque sur une forme standard, sans préserver les longueurs.
 \end{itemize}
 
-\newpage
 \section{Ce que le théorème permet de construire}
-Une fois cinq points d'une conique et un sixième point choisis, Pascal fournit une relation d'incidence entre les intersections de trois paires de côtés. Cette relation sert à construire de nouveaux points de la conique, à retrouver la droite déterminée par une configuration et à démontrer des résultats plus avancés de géométrie projective.
+Pascal fournit une relation d'incidence entre les intersections des trois paires de côtés opposés d'un hexagone inscrit. Cinq points déterminent une conique ; le théorème permet alors de construire à la règle, un par un, autant de points de cette conique que l'on veut : on choisit une droite passant par $P$, ce qui fixe $Q$ et $R$, puis on en déduit le sixième sommet.
 
 \subsection{Le rôle de la dualité}
 Dans le plan projectif, les notions de point et de droite sont échangées par le principe de dualité. La forme duale du théorème de Pascal est le théorème de Brianchon : pour un hexagone circonscrit à une conique, les trois diagonales joignant les sommets opposés sont concourantes. La dualité ne transforme pas une longueur en une autre ; elle transforme une assertion d'incidence en une autre assertion d'incidence.
@@ -139,18 +145,26 @@ Dans le plan projectif, les notions de point et de droite sont échangées par l
 \subsection{Variantes dégénérées}
 Lorsque deux sommets se rapprochent, le côté qui les joint tend vers la tangente à la conique. En faisant tendre des points les uns vers les autres, on obtient des formes dégénérées du théorème, utiles pour étudier les tangentes et les coniques. Ces limites doivent être formulées avec soin : deux points égaux ne définissent plus une corde ordinaire, mais une tangente limite.
 
-\subsection{Questions de révision}
+\subsection{Questions de révision et réponses}
 \begin{enumerate}
  \item Pourquoi l'alignement est-il conservé par une transformation projective ?
- \item Vérifiez que $P(u)$ satisfait $xz=y^2$.
- \item Dérivez l'équation de la droite $P(u)P(v)$ par un déterminant $3\times3$.
+ \item Vérifiez que $M(u)$ satisfait $xz=y^2$.
+ \item Dérivez l'équation de la droite $M(u)M(v)$ par un déterminant $3\times3$.
  \item Recalculez les trois intersections de l'exemple avec les produits vectoriels.
  \item Énoncez le théorème de Brianchon et expliquez en quoi il est dual de Pascal.
+\end{enumerate}
+\textbf{Réponses.}
+\begin{enumerate}
+ \item Trois points sont alignés si et seulement si $\det(U,V,W)=0$ ; pour une matrice inversible $T$, $\det(TU,TV,TW)=\det T\cdot\det(U,V,W)$.
+ \item $x z=1\cdot u^2$ et $y^2=u^2$.
+ \item $\begin{vmatrix}x&y&z\\1&u&u^2\\1&v&v^2\end{vmatrix}=(v-u)\bigl(uv\,x-(u+v)\,y+z\bigr)$.
+ \item Par exemple $(-y+z)\times(12x-7y+z)$ s'écrit $(0,-1,1)\times(12,-7,1)=(6,12,12)\propto[1:2:2]=X$ ; on procède de même pour $Y$ et $Z$.
+ \item Pour un hexagone circonscrit à une conique, les trois droites joignant les sommets opposés sont concourantes. En dualité, points et droites s'échangent, un hexagone inscrit devient un hexagone circonscrit, et « trois points alignés » devient « trois droites concourantes ».
 \end{enumerate}
 
 \section*{Références}
 \begin{enumerate}
- \sourceweb{Wilson Stothers, University of Glasgow, ``Proof of Pascal's Theorem''}{https://www.maths.gla.ac.uk/wws/cabripages/klein/pascalproof.html}
- \sourceweb{Marian Palej, ``A Simple Proof for the Theorems of Pascal and Pappus'', Journal for Geometry and Graphics, 1(1), 1997}{https://www.heldermann-verlag.de/jgg/jgg01_05/jgg0101.pdf}
+ \sourceweb{Wilson Stothers, University of Glasgow, \og Proof of Pascal's Theorem\fg{}}{https://www.maths.gla.ac.uk/wws/cabripages/klein/pascalproof.html}
+ \sourceweb{Marian Palej, \og A Simple Proof for the Theorems of Pascal and Pappus\fg{}, Journal for Geometry and Graphics, 1(1), 1997}{https://www.heldermann-verlag.de/jgg/jgg01_05/jgg0101.pdf}
 \end{enumerate}
 \end{document}

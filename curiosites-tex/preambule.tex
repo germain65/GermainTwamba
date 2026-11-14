@@ -13,6 +13,7 @@
 \usetikzlibrary{arrows.meta,calc,intersections,angles,quotes,patterns,positioning,decorations.pathreplacing}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
+\usepackage{xurl}
 \usepackage{enumitem}
 
 \definecolor{Forest}{HTML}{1D5B4A}
@@ -32,13 +33,14 @@
 \fancyfoot[C]{\small\textcolor{Muted}{\thepage}}
 \renewcommand{\headrulewidth}{0.35pt}
 \renewcommand{\footrulewidth}{0pt}
-\newtheorem{theoreme}{Théorème}[section]
+\newtheorem{theoreme}{Théorème}
 \newtheorem{proposition}[theoreme]{Proposition}
 \newtheorem{lemme}[theoreme]{Lemme}
 \theoremstyle{definition}
 \newtheorem{definition}[theoreme]{Définition}
 \newtheorem{exemple}[theoreme]{Exemple}
 \newcommand{\titreDossier}[3]{%
+  \hypersetup{pdftitle={#1}}%
   \begin{titlepage}\centering\vspace*{1.3cm}
   {\large\scshape\textcolor{Forest}{Club des Divergents \textbullet{} Goma, RDC}}\\[1.5cm]
   {\color{Forest}\rule{0.82\textwidth}{1.2pt}}\\[0.8cm]
@@ -50,7 +52,7 @@
   \vfill
   {\color{Forest}\rule{0.82\textwidth}{1.2pt}}\\[0.45cm]
   {\large Germain-Junior TWAMBA\par}
-  {\normalsize 13 novembre 2026\par}
+  {\normalsize 14 novembre 2026\par}
   \end{titlepage}}
 \newcommand{\sourceweb}[2]{\item \textbf{#1.} \url{#2}}
 \newcommand{\idee}[1]{\begin{quote}\small\colorbox{Mist}{\parbox{0.94\linewidth}{\textbf{Idée à retenir.} #1}}\end{quote}}

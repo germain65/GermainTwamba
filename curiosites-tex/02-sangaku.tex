@@ -1,6 +1,6 @@
 \input{preambule.tex}
 \begin{document}
-\titreDossier{Les problèmes japonais de géométrie}{Sangaku, Washan et géométrie des cercles}{
+\titreDossier{Les problèmes japonais de géométrie}{Sangaku, wasan et géométrie des cercles}{
 Des tablettes mathématiques offertes dans des sanctuaires japonais aux calculs modernes de tangence, les sangaku associent dessin, démonstration et culture mathématique. Ce dossier replace la tradition dans son histoire et résout pas à pas un problème de trois cercles tangents.}
 
 \section*{Une tablette, une question, une recherche}
@@ -13,14 +13,14 @@ Les tablettes ne sont pas simplement des feuilles d'exercices modernes fixées s
   \draw[fill=Forest!7,draw=Forest,very thick,rounded corners=3pt] (-4.3,-1.7) rectangle (4.3,1.7);
   \draw[Forest,thick] (-4.15,1.35)--(4.15,1.35);
   \node[font=\Large\bfseries,Forest] at (0,1.0) {SANGAKU};
-  \draw[Ink,thick] (-3.2,-0.9)--(3.2,-0.9);
-  \draw[Ink,thick] (-2.7,-0.9) circle (0.85);
-  \draw[Ink,thick] (0,-0.9) circle (0.55);
-  \draw[Ink,thick] (2.2,-0.9) circle (0.75);
-  \draw[Forest,very thick] (-3.2,-0.9)--(3.2,-0.9);
-  \node[font=\small] at (-2.7,-0.9) {$r_1$};
-  \node[font=\small] at (0,-0.9) {$r_3$};
-  \node[font=\small] at (2.2,-0.9) {$r_2$};
+  % rayons 0.8, 0.8 et 0.2 : tangences exactes (0.8+0.2 = distance des centres)
+  \draw[Ink,thick] (-0.8,-0.5) circle (0.8);
+  \draw[Ink,thick] (0.8,-0.5) circle (0.8);
+  \draw[Forest,thick] (0,-1.1) circle (0.2);
+  \draw[Forest,very thick] (-2.2,-1.3)--(2.2,-1.3);
+  \node[font=\small] at (-1.1,-0.4) {$r_1$};
+  \node[font=\small] at (1.1,-0.4) {$r_2$};
+  \node[font=\scriptsize,below] at (0,-1.3) {$r_3$};
 \end{tikzpicture}
 \end{center}
 \textit{Reconstitution schématique d'un problème de tangence de cercles. Elle illustre une famille de questions de style sangaku et ne prétend pas reproduire une tablette historique précise.}
@@ -45,27 +45,29 @@ Pour étudier un sangaku aujourd'hui, on suit une démarche qui respecte l'énon
  \item revenir à la figure afin de vérifier que la solution correspond bien à la configuration voulue.
 \end{enumerate}
 
-\newpage
 \section{Problème résolu : trois cercles tangents à une droite}
 \textbf{Énoncé.} Deux cercles de rayons $r_1$ et $r_2$ sont tangents extérieurement l'un à l'autre et tangents à une même droite. Un troisième cercle, placé entre eux, est tangent à cette droite et aux deux cercles. Déterminer son rayon $r_3$.
 
 On suppose $r_1,r_2,r_3>0$ et que les points de contact avec la droite sont dans l'ordre correspondant à la figure. La solution dépend uniquement des deux rayons donnés.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
-  \draw[Forest,very thick] (-4.6,0)--(4.6,0);
-  \draw[Ink,thick] (-2.3,1.25) circle (1.25);
-  \draw[Ink,thick] (2.3,0.95) circle (0.95);
-  \draw[Forest,thick] (0.25,0.48) circle (0.48);
-  \coordinate (O1) at (-2.3,1.25); \coordinate (O2) at (2.3,0.95); \coordinate (O3) at (0.25,0.48);
-  \fill (O1) circle (1.5pt) node[above] {$O_1$};
-  \fill (O2) circle (1.5pt) node[above] {$O_2$};
-  \fill (O3) circle (1.5pt) node[above] {$O_3$};
+\begin{tikzpicture}[scale=1.35]
+  % Figure exacte pour r1 = 2,25 ; r2 = 1 ; r3 = 0,36 (unité : 1 cm sur le dessin)
+  % A = (0,0), P = (1.8,0), B = (3,0) : AP = 2*sqrt(r1 r3) = 1,8 ; PB = 2*sqrt(r2 r3) = 1,2 ; AB = 3
+  \draw[Forest,very thick] (-2.6,0)--(4.4,0);
+  \draw[Ink,thick] (0,2.25) circle (2.25);
+  \draw[Ink,thick] (3,1) circle (1);
+  \draw[Forest,thick] (1.8,0.36) circle (0.36);
+  \coordinate (O1) at (0,2.25); \coordinate (O2) at (3,1); \coordinate (O3) at (1.8,0.36);
+  \fill (O1) circle (1.3pt) node[above left] {$O_1$};
+  \fill (O2) circle (1.3pt) node[above right] {$O_2$};
+  \fill (O3) circle (1pt);
   \draw[dashed] (O1)--(O2); \draw[dashed] (O1)--(O3); \draw[dashed] (O2)--(O3);
-  \draw[<->] (-2.3,0.05)--(-2.3,1.2) node[midway,left] {$r_1$};
-  \draw[<->] (0.25,0.05)--(0.25,0.43) node[midway,left] {$r_3$};
-  \draw[<->] (2.3,0.05)--(2.3,0.9) node[midway,right] {$r_2$};
-  \node[below] at (0,-0.08) {droite commune};
+  \foreach \p/\n in {0/A,1.8/P,3/B} { \fill (\p,0) circle (1.3pt); \node[below=2pt,font=\small] at (\p,0) {$\n$}; }
+  \draw[<->] (-0.35,0.03)--(-0.35,2.22) node[midway,left] {$r_1$};
+  \draw[<->] (3.35,0.03)--(3.35,0.97) node[midway,right] {$r_2$};
+  \node[font=\small] (lr) at (2.55,-0.45) {$r_3$};
+  \draw[->,thin] (lr.north west) -- (2.05,0.18);
 \end{tikzpicture}
 \end{center}
 
@@ -82,7 +84,6 @@ En développant, $(a+b)^2-(a-b)^2=4ab$, donc
 \end{equation}
 Cette formule exprime la distance entre les points où les cercles touchent la droite. Elle reste valable que le centre du premier cercle soit plus haut ou plus bas que le second.
 
-\newpage
 \subsection{Application au petit cercle}
 Appliquons (\ref{eq:gap}) d'abord aux deux grands cercles. Si leurs points de contact sont $A$ et $B$, alors
 \[
@@ -113,7 +114,6 @@ Prenons $r_1=36$ et $r_2=9$, en centimètres. Alors $\sqrt{r_1}=6$, $\sqrt{r_2}=
 Vérification géométrique : $AB=2\sqrt{36\cdot9}=36$ cm ; les deux morceaux valent $AP=2\sqrt{36\cdot4}=24$ cm et $PB=2\sqrt{9\cdot4}=12$ cm. La somme $24+12=36$ confirme la position du petit cercle.
 \end{exemple}
 
-\newpage
 \section{Une variable qui rend la formule plus simple}
 La formule (\ref{eq:radius}) peut paraître surprenante. Posons $q_i=1/\sqrt{r_i}$. En prenant la racine carrée puis l'inverse dans (\ref{eq:radius}), on trouve
 \begin{equation}\label{eq:q}
@@ -137,7 +137,6 @@ Cette suite n'est pas une approximation graphique : elle résulte de la même re
 \subsection{Limites et prudence}
 La formule suppose que les trois cercles sont du même côté de la droite, que les deux cercles extérieurs sont tangents entre eux, et que le troisième se trouve entre leurs points de contact. Si les cercles se chevauchent, si le cercle recherché est placé à l'extérieur ou si une tangence est intérieure, l'addition $AP+PB=AB$ peut ne plus décrire la figure. Il faut alors repartir de l'énoncé et ajuster les équations de distance.
 
-\newpage
 \section{Pourquoi ces problèmes sont-ils instructifs ?}
 Les configurations de tangence transforment une image riche en quelques contraintes précises. Une tangence entre deux cercles donne une distance entre centres ; une tangence à une droite donne une hauteur égale au rayon ; une tangence double fournit souvent un triangle rectangle. Le dessin suggère alors Pythagore.
 
@@ -152,18 +151,25 @@ Ce problème illustre une méthode générale de modélisation géométrique :
 
 Un dessin n'est jamais une preuve de tangence. Deux cercles peuvent sembler toucher à l'écran sans que leurs centres soient à la somme de leurs rayons. Les égalités de distance sont la partie mathématique essentielle.
 
-\subsection{Exercices avec solutions-guides}
+\subsection{Exercices et réponses}
 \begin{enumerate}
- \item Si $r_1=16$ et $r_2=4$, trouvez $r_3$. Réponse : $r_3=1$.
- \item Pour quelles valeurs de $r_1,r_2>0$ le petit cercle a-t-il un rayon $r_3=1$ ? La relation (\ref{eq:q}) donne $1=1/\sqrt{r_1}+1/\sqrt{r_2}$.
+ \item Si $r_1=16$ et $r_2=4$, trouvez $r_3$.
+ \item Pour quelles valeurs de $r_1,r_2>0$ le petit cercle a-t-il un rayon $r_3=1$ ?
  \item Expliquez pourquoi la valeur de $r_3$ est toujours strictement plus petite que chacun des rayons $r_1,r_2$.
  \item Démontrez (\ref{eq:gap}) en plaçant les centres en $(0,a)$ et $(d,b)$.
+\end{enumerate}
+\textbf{Réponses.}
+\begin{enumerate}
+ \item $r_3=\dfrac{16\cdot4}{(4+2)^2}=\dfrac{64}{36}=\dfrac{16}{9}$. Vérification avec (\ref{eq:q}) : $\frac14+\frac12=\frac34=\frac1{\sqrt{r_3}}$, donc $r_3=\frac{16}{9}$. (La valeur $r_3=1$ correspond à $r_1=r_2=4$.)
+ \item Il faut $\dfrac1{\sqrt{r_1}}+\dfrac1{\sqrt{r_2}}=1$. Cela impose $r_1>1$ et $r_2>1$, et donne $r_2=\bigl(\sqrt{r_1}/(\sqrt{r_1}-1)\bigr)^2$. Par exemple $r_1=r_2=4$, ou $r_1=9$ et $r_2=9/4$.
+ \item Par (\ref{eq:q}), $1/\sqrt{r_3}=1/\sqrt{r_1}+1/\sqrt{r_2}>1/\sqrt{r_1}$, donc $r_3<r_1$ ; de même $r_3<r_2$.
+ \item Avec $O_1=(0,a)$ et $O_2=(d,b)$, la tangence extérieure donne $d^2+(a-b)^2=(a+b)^2$, donc $d^2=4ab$ et $d=2\sqrt{ab}$.
 \end{enumerate}
 
 \section*{Références}
 \begin{enumerate}
- \sourceweb{National Diet Library of Japan, ``Sangaku (Mathematical Tablet)'', histoire, tablettes et exemple géométrique}{https://www.ndl.go.jp/math/e/s1/c5.html}
- \sourceweb{T. Rothman, ``Sangaku Problems About Ellipses: Why Primary Sources Matter'', The Mathematical Intelligencer}{https://link.springer.com/article/10.1007/s00283-021-10105-6}
- \sourceweb{Mansur, ``Japanese Sangaku: Geometry Displayed in Temples'', problème pédagogique de trois cercles tangents}{https://history-math.org/publications/hm-tt-5c1d88688388-en/}
+ \sourceweb{National Diet Library of Japan, \og Sangaku (Mathematical Tablet)\fg{}, histoire, tablettes et exemple géométrique}{https://www.ndl.go.jp/math/e/s1/c5.html}
+ \sourceweb{T. Rothman, \og Sangaku Problems About Ellipses: Why Primary Sources Matter\fg{}, The Mathematical Intelligencer}{https://link.springer.com/article/10.1007/s00283-021-10105-6}
+ \sourceweb{Mansur, \og Japanese Sangaku: Geometry Displayed in Temples\fg{}, problème pédagogique de trois cercles tangents}{https://history-math.org/publications/hm-tt-5c1d88688388-en/}
 \end{enumerate}
 \end{document}
