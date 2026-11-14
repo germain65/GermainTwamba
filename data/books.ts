@@ -346,11 +346,6 @@ const books: Book[] = [
   },
 ];
 
-// ─── Prochains ouvrages ───────────────────────────────────────────────────────
-// TODO: décommentez et complétez pour annoncer un tome à paraître :
-// { title: 'Tome III : …', note: 'Parution prévue en …' }
-export const upcoming: { title: string; note?: string }[] = [];
-
 // ─── Validation ───────────────────────────────────────────────────────────────
 // Une erreur claire est levée au build si un identifiant ou un slug est dupliqué.
 const seen = new Set<string>();

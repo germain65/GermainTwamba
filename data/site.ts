@@ -20,6 +20,8 @@ export const site = {
     { label: 'Email',    href: 'mailto:amandotwamba@gmail.com' },
   ],
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT ?? '',
+  // Code de site GoatCounter (ex. 'germain-twamba' pour germain-twamba.goatcounter.com). Vide = aucune mesure.
+  goatcounter: process.env.NEXT_PUBLIC_GOATCOUNTER ?? '',
 };
 
 export const nav = [

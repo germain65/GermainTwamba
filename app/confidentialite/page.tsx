@@ -28,7 +28,14 @@ export default function ConfidentialitePage() {
       <p>GitHub indique que les visites sur les sites GitHub Pages entraînent l’enregistrement de l’adresse IP à des fins de sécurité. Pour en savoir plus sur les traitements effectués par l’hébergeur, consultez la <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection" target="_blank" rel="noopener noreferrer">documentation GitHub Pages</a> et la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">déclaration de confidentialité de GitHub</a>.</p>
 
       <h2>Mesure d’audience et cookies</h2>
-      <p>Le code du site ne configure actuellement aucun outil de mesure d’audience ni cookie publicitaire. Les réglages techniques propres à l’hébergement restent soumis aux informations publiées par GitHub.</p>
+      {site.goatcounter ? (
+        <>
+          <p>Le site utilise GoatCounter pour compter les pages consultées et les fichiers PDF téléchargés. Ce service ne dépose aucun cookie et n’enregistre rien dans votre navigateur. Votre adresse IP n’est pas conservée : elle sert seulement, en mémoire et pendant huit heures au maximum, à distinguer les visites et à en déduire un pays. Les statistiques sont agrégées (pages consultées, fichiers téléchargés, navigateur, système, pays, langue, largeur d’écran) et ne sont partagées avec aucun tiers. Pour en savoir plus, consultez la <a href="https://www.goatcounter.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de GoatCounter</a>.</p>
+          <p>Le site n’utilise aucun cookie publicitaire. Les réglages techniques propres à l’hébergement restent soumis aux informations publiées par GitHub.</p>
+        </>
+      ) : (
+        <p>Le code du site ne configure actuellement aucun outil de mesure d’audience ni cookie publicitaire. Les réglages techniques propres à l’hébergement restent soumis aux informations publiées par GitHub.</p>
+      )}
 
       <h2>Liens vers d’autres services</h2>
       <p>Les liens vers GitHub, Zenodo, Scribd, MonBestSeller et d’autres sites ouvrent des services tiers qui appliquent leurs propres règles de confidentialité. Consultez leurs informations avant de leur transmettre des données.</p>

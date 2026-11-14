@@ -221,7 +221,7 @@ export default function Home() {
           Cette bibliothèque a été conçue pour centraliser et préserver une production mathématique exigeante, née de l&apos;émulation scientifique à Goma et poursuivie à l&apos;UCLouvain.
         </p>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
           <div className="border border-rule p-5 bg-tint/20">
             <span className="font-mono text-2xl font-bold text-accent">01.</span>
             <h3 className="mt-2 font-serif text-xl font-semibold">Recueil permanent</h3>
@@ -234,13 +234,6 @@ export default function Home() {
             <h3 className="mt-2 font-serif text-xl font-semibold">Téléchargement libre</h3>
             <p className="mt-2 text-sm text-mute leading-relaxed">
               Aucun abonnement, aucune barrière financière : tous les manuels sont diffusés au format PDF sous licence Creative Commons CC BY-NC-ND 4.0 (partage libre, sans modification ni usage commercial).
-            </p>
-          </div>
-          <div className="border border-rule p-5 bg-tint/20">
-            <span className="font-mono text-2xl font-bold text-accent">03.</span>
-            <h3 className="mt-2 font-serif text-xl font-semibold">Nouveaux tomes à venir</h3>
-            <p className="mt-2 text-sm text-mute leading-relaxed">
-              La collection s&apos;enrichit continuellement : les prochains tomes d&apos;analyse, d&apos;algèbre et de physique mathématique y seront ajoutés directement.
             </p>
           </div>
         </div>

@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Analytics from '@/components/Analytics';
 import { site, asset } from '@/data/site';
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -12,10 +12,10 @@
 2. [Structure du projet](#2-structure-du-projet)
 3. [Ajouter un nouveau livre](#3-ajouter-un-nouveau-livre)
 4. [Ajouter ou remplacer des photos](#4-ajouter-ou-remplacer-des-photos)
-5. [Annoncer un tome à paraître](#5-annoncer-un-tome-à-paraître)
-6. [Modifier les publications et projets](#6-modifier-les-publications-et-projets)
-7. [Déployer sur GitHub Pages](#7-déployer-sur-github-pages)
-8. [Formulaire de contact](#8-formulaire-de-contact)
+5. [Modifier les publications et projets](#5-modifier-les-publications-et-projets)
+6. [Déployer sur GitHub Pages](#6-déployer-sur-github-pages)
+7. [Formulaire de contact](#7-formulaire-de-contact)
+8. [Mesure d’audience](#8-mesure-daudience-goatcounter)
 9. [Règles de nommage des fichiers](#9-règles-de-nommage-des-fichiers)
 10. [Questions fréquentes](#10-questions-fréquentes)
 
@@ -103,7 +103,7 @@ Voici les **4 étapes** à suivre à chaque nouveau tome ou fascicule.
 
 ### Étape 2 : Ajouter une entrée dans `data/books.ts`
 
-Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle **avant** la ligne `// ─── Prochains ouvrages` :
+Ouvrez le fichier [`data/books.ts`](data/books.ts) et copiez-collez ce modèle à la fin du tableau `books` (juste avant le `];`) :
 
 ```typescript
 {
@@ -227,26 +227,7 @@ git push
 
 ---
 
-## 5. Annoncer un tome à paraître
-
-Dans [`data/books.ts`](data/books.ts), remplissez le tableau `upcoming` pour afficher une annonce sur le site :
-
-```typescript
-export const upcoming: { title: string; note?: string }[] = [
-  {
-    title: 'Tome III : Probabilités et statistiques',
-    note: 'Parution prévue en 2027',
-  },
-  {
-    title: 'Tome IV : Calcul différentiel et intégral',
-    note: 'En cours de rédaction',
-  },
-];
-```
-
----
-
-## 6. Modifier les publications et projets
+## 5. Modifier les publications et projets
 
 Ouvrez [`data/content.ts`](data/content.ts) pour modifier :
 
@@ -260,7 +241,7 @@ Chaque tableau est documenté directement dans le fichier avec des commentaires 
 
 ---
 
-## 7. Déployer sur GitHub Pages
+## 6. Déployer sur GitHub Pages
 
 Le déploiement est **entièrement automatique** grâce au fichier [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
@@ -292,7 +273,7 @@ gh workflow run deploy.yml --repo germain65/GermainTwamba
 
 ---
 
-## 8. Formulaire de contact
+## 7. Formulaire de contact
 
 Le formulaire n'est pas connecté par défaut. Dans cette version, la page Contact propose un lien `mailto` pour écrire directement. Le site ne transmet ni ne stocke alors le message.
 
@@ -303,6 +284,18 @@ NEXT_PUBLIC_FORM_ENDPOINT=https://votre-prestataire.example/votre-formulaire
 ```
 
 Dans GitHub, configurez-la dans **Settings → Secrets and variables → Actions → Variables**. Le workflow de publication la transmet au build. Comme `NEXT_PUBLIC_FORM_ENDPOINT` est intégrée aux fichiers du site, cette adresse sera publique. Complétez la note de confidentialité avec le nom du prestataire et ses informations avant d'activer l'envoi.
+
+---
+
+## 8. Mesure d'audience (GoatCounter)
+
+Le site peut compter les pages vues et les téléchargements de PDF avec [GoatCounter](https://www.goatcounter.com/), un service sans cookie et sans stockage dans le navigateur. Tant que le code n'est pas renseigné, rien n'est envoyé et la note de confidentialité l'indique.
+
+1. Créez un compte gratuit sur goatcounter.com et choisissez un code de site (par exemple `germain-twamba`, ce qui donne `germain-twamba.goatcounter.com`).
+2. Dans GitHub : **Settings → Secrets and variables → Actions → Variables**, ajoutez `NEXT_PUBLIC_GOATCOUNTER` avec ce code.
+3. Poussez un changement ou relancez le workflow. Les statistiques apparaissent sur votre tableau de bord GoatCounter. Chaque clic sur un PDF est compté comme un événement nommé `telechargement/<fichier>.pdf`.
+
+La page `/confidentialite/` s'adapte automatiquement quand la mesure est active.
 
 ---
 

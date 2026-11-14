@@ -37,6 +37,7 @@ jobs:
       - name: Compiler le site statique
         env:
           NEXT_PUBLIC_FORM_ENDPOINT: ${{ vars.NEXT_PUBLIC_FORM_ENDPOINT }}
+          NEXT_PUBLIC_GOATCOUNTER: ${{ vars.NEXT_PUBLIC_GOATCOUNTER }}
         run: npm run build
 
       - name: Téléverser l'artefact GitHub Pages
