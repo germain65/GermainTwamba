@@ -26,8 +26,7 @@ export default function Footer() {
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-mute">
               Bibliothèque numérique d&apos;ouvrages de mathématiques en accès libre, éditée par le{' '}
-              <strong className="font-semibold text-ink">Club des Divergents</strong>, à Goma (RDC) et à
-              Louvain-la-Neuve (Belgique).
+              <strong className="font-semibold text-ink">Club des Divergents</strong>.
             </p>
           </div>
 

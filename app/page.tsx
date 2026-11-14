@@ -20,11 +20,8 @@ export default function Home() {
             Bibliothèque numérique
           </h1>
 
-          <p className="mt-6 font-serif text-lg md:text-xl leading-relaxed text-ink/90 max-w-[54ch]">
-            <span className="float-left mr-3.5 font-serif text-6xl md:text-7xl font-bold leading-none text-accent select-none">
-              B
-            </span>
-            ibliothèque numérique officielle dédiée au recueil, à la conservation et au libre partage d&apos;ouvrages de sciences et de mathématiques.
+          <p className="mt-6 font-serif text-xl md:text-2xl leading-relaxed text-ink/90 max-w-[54ch]">
+            Bibliothèque numérique officielle dédiée au recueil, à la conservation et au libre partage de mes ouvrages scientifiques.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">

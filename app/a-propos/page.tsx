@@ -9,7 +9,7 @@ import { asset } from '@/data/site';
 export const metadata: Metadata = {
   title: 'À propos de l’auteur',
   description:
-    'Germain-Junior TWAMBA, auteur scientifique, étudiant à l’École polytechnique de Louvain (UCLouvain) et fondateur du Club des Divergents à Goma (RDC).',
+    'Germain-Junior TWAMBA, auteur scientifique et étudiant à l’École polytechnique de Louvain (UCLouvain).',
   alternates: { canonical: '/a-propos/' },
 };
 
@@ -17,7 +17,6 @@ const timeline = [
   { year: 'Déc. 2006', text: 'Naissance à Goma, République Démocratique du Congo.' },
   { year: '2020', text: 'Découverte passionnée des mathématiques pendant le confinement, à l’âge de 13 ans.' },
   { year: '2020–2026', text: 'Formation aux humanités scientifiques à l’Institut Mwanga de Goma.' },
-  { year: '2026', text: 'Fondation du Club des Divergents à Goma : initiative d’émulation et maison d’édition libre.' },
   { year: 'Oct. 2026', text: 'Publication du Tome I : Trigonométrie plane (455 pages).' },
   { year: 'Oct. 2026', text: 'Publication du Tome II : Éléments d’algèbre, d’analyse et de géométrie (465 pages).' },
   { year: '2026–présent', text: 'Études d’ingénieur civil à l’École polytechnique de Louvain (UCLouvain, Belgique).' },
@@ -33,7 +32,6 @@ const interests = [
 // Galerie : portraits et lieux
 const gallery = [
   { src: '/photos/germain-acropole.jpg', alt: 'L’auteur debout sur une esplanade de pierre, avec un site antique sur la colline en arrière-plan' },
-  { src: '/photos/germain-portrait.jpg',        alt: 'Autoportrait de l’auteur dans les gradins d’un stade, sous un ciel dégagé' },
   { src: '/photos/germain-parc.jpg',            alt: 'L’auteur debout sur une pelouse, devant un grand bâtiment en brique' },
   { src: '/photos/germain-cote.jpg',            alt: 'L’auteur sur un pont au bord de l’eau, avec une falaise et une église en arrière-plan' },
   { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'La tour d’une bibliothèque universitaire sous un ciel bleu' },
@@ -52,14 +50,14 @@ export default function About() {
       <h1 className="mb-12 font-serif text-5xl">À propos de l&apos;auteur</h1>
 
       {/* ── Portrait + Biographie ─────────────────────────── */}
-      <section className="grid gap-10 md:grid-cols-[300px_1fr]" aria-labelledby="bio">
+      <section className="grid gap-10 md:grid-cols-[340px_1fr]" aria-labelledby="bio">
         <div>
           <img
-            src={asset('/photos/germain-portrait.jpg')}
-            alt="Germain-Junior TWAMBA"
-            className="w-full border-2 border-ink object-cover shadow-md"
+            src={asset('/photos/germain-acropole.jpg')}
+            alt="Germain-Junior TWAMBA devant l’Acropole à Athènes"
+            className="w-full h-auto border-2 border-ink shadow-md"
           />
-          <p className="mt-2 text-center text-xs font-mono text-mute">Germain-Junior TWAMBA</p>
+          <p className="mt-2 text-center text-xs font-mono text-mute">Germain-Junior TWAMBA &middot; Athènes</p>
         </div>
         <div>
           <h2 id="bio" className="mb-4 font-serif text-3xl">Biographie</h2>
@@ -75,9 +73,8 @@ export default function About() {
               Il se forme à l&apos;Institut Mwanga de Goma, puis rejoint l&apos;École polytechnique de Louvain
               (UCLouvain) en Belgique pour y poursuivre des études d&apos;ingénieur. Convaincu que la réussite
               dans les études supérieures ne dépend pas d&apos;une facilité innée mais de la rigueur de la
-              méthode, il fonde à Goma le <strong>Club des Divergents</strong>, une forme de maison
-              d&apos;édition libre dont l&apos;objectif est de mettre à la disposition de la jeunesse africaine
-              des outils pédagogiques au plus haut standard académique.
+              méthode, il s&apos;engage à concevoir et diffuser librement des manuels et outils pédagogiques
+              répondant aux plus hauts standards académiques.
             </p>
             <p>
               Ce site web constitue le recueil officiel de cette collection, garantissant que chaque élève, enseignant ou curieux puisse y accéder sans barrière financière.
