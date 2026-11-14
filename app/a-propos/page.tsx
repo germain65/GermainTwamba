@@ -31,7 +31,6 @@ const interests = [
 
 // Galerie : portraits et lieux
 const gallery = [
-  { src: '/photos/germain-acropole.jpg', alt: 'L’auteur debout sur une esplanade de pierre, avec un site antique sur la colline en arrière-plan' },
   { src: '/photos/germain-parc.jpg',            alt: 'L’auteur debout sur une pelouse, devant un grand bâtiment en brique' },
   { src: '/photos/germain-cote.jpg',            alt: 'L’auteur sur un pont au bord de l’eau, avec une falaise et une église en arrière-plan' },
   { src: '/photos/uclouvain-bibliotheque.jpg',  alt: 'La tour d’une bibliothèque universitaire sous un ciel bleu' },
@@ -50,11 +49,11 @@ export default function About() {
       <h1 className="mb-12 font-serif text-5xl">À propos de l&apos;auteur</h1>
 
       {/* ── Portrait + Biographie ─────────────────────────── */}
-      <section className="grid gap-10 md:grid-cols-[340px_1fr]" aria-labelledby="bio">
+      <section className="grid gap-10 md:grid-cols-[380px_1fr]" aria-labelledby="bio">
         <div>
           <img
-            src={asset('/photos/germain-acropole.jpg')}
-            alt="Germain-Junior TWAMBA devant l’Acropole à Athènes"
+            src={asset('/photos/germain-athenes.jpg')}
+            alt="Germain-Junior TWAMBA à Athènes"
             className="w-full h-auto border-2 border-ink shadow-md"
           />
           <p className="mt-2 text-center text-xs font-mono text-mute">Germain-Junior TWAMBA &middot; Athènes</p>

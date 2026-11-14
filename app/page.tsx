@@ -207,10 +207,10 @@ export default function Home() {
       {/* ── Raison d'être de ce recueil en accès libre ─────────────────── */}
       <section className="my-12 border-t-2 border-ink pt-12">
         <h2 className="font-serif text-3xl text-ink">
-          La mission du recueil : Partager l&apos;exigence mathématique
+          La mission du recueil : Partager les mathématiques
         </h2>
         <p className="mt-3 max-w-3xl text-base text-mute leading-relaxed">
-          Cette bibliothèque a été conçue pour centraliser et préserver une production mathématique exigeante, née de l&apos;émulation scientifique à Goma et poursuivie à l&apos;UCLouvain.
+          Cette bibliothèque a été conçue pour centraliser, préserver et mettre à la disposition de tous des ouvrages d&apos;apprentissage des sciences mathématiques.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -236,7 +236,7 @@ export default function Home() {
         {[
           ['Bibliothèque', '/bibliotheque/', 'Consulter l’ensemble des tomes, fiches et aperçus.'],
           ['Publications', '/publications/', 'Manuels, fascicules et synthèses méthodologiques.'],
-          ['À propos', '/a-propos/', 'Parcours, photos, Institut Mwanga et UCLouvain.'],
+          ['À propos', '/a-propos/', 'Parcours et présentation de l’auteur.'],
         ].map(([t, h, d]) => (
           <Link
             key={h}
