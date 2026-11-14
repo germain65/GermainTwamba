@@ -16,20 +16,15 @@ export default function Home() {
       {/* ── Section Héros : Vocation centrale du site et portrait ──── */}
       <section className="rise grid items-center gap-10 pb-16 pt-12 md:grid-cols-[1.3fr_0.9fr] md:pt-20">
         <div>
-          <span className="inline-block text-xs font-mono uppercase tracking-widest text-accent border border-accent/40 px-2.5 py-1 mb-4 font-semibold">
-            Bibliothèque numérique officielle &middot; Recueil des ouvrages
-          </span>
-
           <h1 className="font-serif text-[clamp(2.5rem,6.5vw,4.8rem)] leading-[1.02] tracking-tight text-ink">
-            {site.name}
+            Bibliothèque numérique
           </h1>
 
-          <p className="mt-4 font-serif text-xl text-mute md:text-2xl leading-snug max-w-[38ch]">
-            Ce site est la bibliothèque officielle destinée à <strong>recueillir, centraliser et offrir en libre accès</strong> l&apos;ensemble de mes ouvrages mathématiques et scientifiques.
-          </p>
-
-          <p className="mt-6 font-serif text-base md:text-lg leading-relaxed text-ink/90 max-w-[56ch]">
-            Fondateur du <em>Club des Divergents</em> à Goma (RDC) et étudiant en sciences de l&apos;ingénieur à l&apos;<strong>École polytechnique de Louvain (UCLouvain)</strong> en Belgique, j&apos;ai créé cette plateforme comme le point d&apos;ancrage unique où tous mes livres, actuels et futurs, sont mis à disposition gratuitement, téléchargeables au format PDF pour les élèves, les enseignants et les passionnés de sciences.
+          <p className="mt-6 font-serif text-lg md:text-xl leading-relaxed text-ink/90 max-w-[54ch]">
+            <span className="float-left mr-3.5 font-serif text-6xl md:text-7xl font-bold leading-none text-accent select-none">
+              B
+            </span>
+            ibliothèque numérique officielle dédiée au recueil, à la conservation et au libre partage d&apos;ouvrages de sciences et de mathématiques.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">

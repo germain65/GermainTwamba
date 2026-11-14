@@ -2,7 +2,10 @@
 // Rôle    : Informations d'identité, navigation et gestion du basePath pour GitHub Pages
 // Auteur  : Germain-Junior TWAMBA
 
-export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '/GermainTwamba';
+// En développement local (npm run dev), aucun préfixe pour charger directement depuis public/
+// En production (GitHub Pages), préfixe avec le nom du dépôt : /GermainTwamba
+const isDev = process.env.NODE_ENV === 'development';
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? (isDev ? '' : '/GermainTwamba');
 export const siteUpdatedAt = '13 novembre 2026';
 export const siteUpdatedAtISO = '2026-11-13'; // même date, format AAAA-MM-JJ (sitemap)
 
