@@ -38,6 +38,7 @@ jobs:
         env:
           NEXT_PUBLIC_FORM_ENDPOINT: ${{ vars.NEXT_PUBLIC_FORM_ENDPOINT }}
           NEXT_PUBLIC_GOATCOUNTER: ${{ vars.NEXT_PUBLIC_GOATCOUNTER }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: npm run build
 
       - name: Téléverser l'artefact GitHub Pages

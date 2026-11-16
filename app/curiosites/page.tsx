@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { asset } from '@/data/site';
+import { asset, site } from '@/data/site';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbLd } from '@/data/seo';
 
 export const metadata: Metadata = {
   title: 'Curiosités',
-  description: 'Petites curiosités mathématiques, scientifiques et autres.',
+  description: 'Dossiers PDF de mathématiques à lire ou télécharger : théorème de Pascal, problèmes japonais (sangaku), matrices de Gram, modèle de Verhulst.',
   alternates: { canonical: '/curiosites/' },
 };
 
@@ -51,8 +53,35 @@ const notes = [
 ];
 
 export default function CuriositesPage() {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Curiosités mathématiques',
+    url: `${site.url}/curiosites/`,
+    inLanguage: 'fr',
+    isPartOf: { '@id': `${site.url}/#site` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: notes.map((n, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'LearningResource',
+          name: n.title,
+          description: n.body,
+          about: n.theme,
+          datePublished: '2026-11-14',
+          inLanguage: 'fr',
+          isAccessibleForFree: true,
+          author: { '@id': `${site.url}/#auteur` },
+          encoding: { '@type': 'MediaObject', contentUrl: `${site.url}/curiosites/${n.pdf}`, encodingFormat: 'application/pdf' },
+        },
+      })),
+    },
+  };
   return (
     <div className="pt-14 pb-16">
+      <JsonLd data={[ld, breadcrumbLd([{ name: 'Accueil', path: '/' }, { name: 'Curiosités', path: '/curiosites/' }])]} />
       <header className="mb-12 max-w-3xl">
         <span className="text-xs font-mono uppercase tracking-widest text-accent font-semibold">Une idée à la fois</span>
         <h1 className="mt-2 font-serif text-4xl md:text-5xl text-ink">Curiosités</h1>

@@ -3,10 +3,18 @@
 // Vocation: Recueillir, centraliser et diffuser librement l'ensemble des livres de l'auteur
 // Auteur  : Germain-Junior TWAMBA
 
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { seo } from '@/data/seo';
 import { allBooks } from '@/data/books';
 import { site, asset } from '@/data/site';
 import BookCover from '@/components/BookCover';
+
+export const metadata: Metadata = {
+  title: { absolute: seo.homeTitle },
+  description: seo.homeDescription,
+  alternates: { canonical: '/' },
+};
 
 export default function Home() {
   const [tome1, tome2] = allBooks;

@@ -340,3 +340,16 @@ Oui. Mettez `language: 'en'` dans l'entrée `books.ts`. La fiche s'affichera nor
 ---
 
 *Dernière mise à jour : novembre 2026 · Germain-Junior TWAMBA / Club des Divergents, Goma (RDC)*
+
+## Référencement Google (SEO)
+
+Le site génère automatiquement : titres et descriptions par page, URL canoniques, `sitemap.xml`, données structurées schema.org (auteur, site, livres, curiosités, fil d'Ariane) et balises Open Graph.
+
+Étapes à faire une seule fois dans la **Google Search Console** :
+1. Ajouter la propriété « Préfixe d'URL » `https://germain65.github.io/GermainTwamba/`.
+2. Choisir la vérification par **balise HTML** et copier uniquement le contenu de `content="..."`.
+3. Dans GitHub : *Settings → Secrets and variables → Actions → Variables*, créer `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` avec cette valeur, puis relancer le déploiement.
+4. Cliquer sur « Valider » dans la Search Console, puis soumettre `https://germain65.github.io/GermainTwamba/sitemap.xml` (menu *Sitemaps*).
+5. Dans « Inspection de l'URL », demander l'indexation de l'accueil, de `/bibliotheque/` et de `/curiosites/`.
+
+Remarque : un `robots.txt` placé dans un site de projet GitHub Pages n'est pas lu par Google (il doit être à la racine du domaine). Il est sans effet négatif, car tout est déjà autorisé.

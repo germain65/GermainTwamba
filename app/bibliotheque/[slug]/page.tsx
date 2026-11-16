@@ -9,6 +9,8 @@ import type { TocEntry } from '@/data/books';
 import { site, asset } from '@/data/site';
 import BookCover from '@/components/BookCover';
 import PdfPreview from '@/components/PdfPreview';
+import JsonLd from '@/components/JsonLd';
+import { breadcrumbLd } from '@/data/seo';
 
 type P = { params: Promise<{ slug: string }> };
 
@@ -122,11 +124,15 @@ export default async function BookPage({ params }: P) {
       },
     }),
     url: `${site.url}/bibliotheque/${b.slug}/`,
+    description: b.description,
+    keywords: b.tags.join(', '),
+    ...(b.series && { isPartOf: { '@type': 'BookSeries', name: b.series } }),
+    ...(b.volume && { position: b.volume }),
   };
 
   return (
     <article className="pt-14">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <JsonLd data={[ld, breadcrumbLd([{ name: 'Accueil', path: '/' }, { name: 'Bibliothèque', path: '/bibliotheque/' }, { name: b.title, path: `/bibliotheque/${b.slug}/` }])]} />
 
       <Link href="/bibliotheque/" className="text-sm underline">
         ← Retour à la bibliothèque
